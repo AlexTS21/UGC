@@ -5,7 +5,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: linear-gradient(rgb(192, 154, 70), rgb(156, 130, 72));
+  background-color: #121314;
 }
 .login-box{
   position: absolute;
@@ -69,13 +69,13 @@ body{
   letter-spacing: 4px;
 }
 .login-box a:hover{
-  background: #f48c03;
+  background: #544E9F;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #f48c03,
-              0 0 25px #f48c03,
-              0 0 50px #f48c03,
-              0 0 100px #f48c03;
+  box-shadow: 0 0 5px #544E9F,
+              0 0 25px #544E9F,
+              0 0 50px #544E9F,
+              0 0 100px #544E9F;
 }
 .login-box a span{
   position: absolute;
@@ -86,7 +86,7 @@ body{
   left: -100px;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg,transparent,#f48c03);
+  background: linear-gradient(90deg,transparent,#544E9F);
 }
 @keyframes btn-anim1{
   0%{
@@ -101,7 +101,7 @@ body{
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #f48c03);
+  background: linear-gradient(180deg, transparent, #544E9F);
   animation: btn-anim2 1s linear infinite;
   animation-delay: .25s
 }
@@ -120,7 +120,7 @@ body{
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #f48c03);
+  background: linear-gradient(270deg, transparent, #544E9F);
   animation: btn-anim3 1s linear infinite;
   animation-delay: .5s
 }
@@ -139,7 +139,7 @@ body{
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #f48c03);
+  background: linear-gradient(360deg, transparent, #544E9F);
   animation: btn-anim4 1s linear infinite;
   animation-delay: .75s
 }
