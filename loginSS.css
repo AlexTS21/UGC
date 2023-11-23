@@ -53,20 +53,21 @@ body{
 .login-box .user-box input:valid ~ label{
   top: -20px;
   left: 0;
-  color: #f48c03;
+  color: #544E9F;
   font-size: 12;
 }
 .login-box form a{
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  color: rgba(244, 140, 3, 0.603)6b;
+  color: #544E9F;
   font-size: 16px;
   text-decoration: none;
   overflow: hidden;
   transition: .5s;
   margin-top: 40px;
   letter-spacing: 4px;
+  font-family: 'League Spartan', sans-serif;
 }
 .login-box a:hover{
   background: #544E9F;
