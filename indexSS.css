@@ -1,57 +1,68 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-button{
-    background-color: #23262B;
-    border-style: none;
-    border-radius: 25px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0,.5);
-    height: 80px;
-    width: 25%;
-    color: white;
-    font-family: "monserrat";
-    transition: 0.8s;
-}   
-
-button:hover{
-    background-color: white;
-    color: #23262B;
-}
-
-.backGround{
-    height: 100vh;
+html{
     width: 100%;
-    background: linear-gradient(0deg,  #412874, #20744A, #412874,  #20744A);
-    background-size: 400% 300%;
-    animation: color 20s linear infinite;
+    height: 100%;
+}
+
+body{
+    width: inherit;
+    height: inherit;
+}
+
+button{
+    width: 300px;
+    height: 80px;
+    border-radius: 12px;
+    border-color: aliceblue;
+    background-color: #121314;
+    color: aliceblue;
+    transition: 0.8s;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-size: larger;
+}
+
+.container{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    background-color:#121314;
+    align-items: center;
+    justify-content: baseline;
+    
+   
 }
 
 .title{
-    height: 85px;
-    background-color: #23262B;
-    color: white;
+    width:inherit;
+    height: 80px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.box{
-    height: 500px;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: last center;
     justify-content: space-evenly;
-    align-items: center;
-    
+    color: aliceblue;
+    background-color: #1D1F21;
+    border-bottom:2px solid aliceblue;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
     
 }
 
-@keyframes color{
-    0%{
-        background-position: 0% 50%;
-    }
-    100%{
-        background-position: 50% 0%;
-    }
+
+
+.but{
+    height: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #121314;
+}
+
+button:hover{
+    border-color: #121314;
+    background-color: aliceblue;
+    color: #121314;
+    size: 110%;
 }
