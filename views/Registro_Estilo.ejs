@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/EstilosEMSS.css">
+    <title>ESTILOS EDICION</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <a class="ugc">UGC</a>
+        </div>
+        <div class="section">
+            <a class="page">EDICION DE ESTILOS</a>
+        </div>
+        <form action="/validar" method="post">
+            <div class="fields">
+                <div class="datos">
+                    <a class="titlefield">Datos del estilo</a>
+                    <div class="datet"><a>Modelo</a></div>
+                    <input class="datin" type="text" placeholder="Modelo.." name="modelo" id="modelo">
+                    <div class="datet"><a>Descripcion</a></div>
+                    <input class="datin" type="text" placeholder="Descripcion.." name="descrip" id="descrip">
+                    <div class="datet"><a>Tela</a></div>
+                    <input class="datin" type="text" placeholder="Tela.." name="tela" id="tela">
+                </div>
+                <div class="tallas">
+                    <a class="titlefield">Tallas</a>
+                    <div class="datet"><a>Talla</a></div>
+                    <input class="datin" type="text" placeholder="Talla.." name="talla" id="talla">
+                </div>
+                <div class="hilos">
+                    <div class="guia">
+                        <a>Guia</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="guiaH" id="guiaH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="guiaC" id="modeloC">
+                    </div>
+                    <div class="presilla">
+                        <a>Presilla/Hojal</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="presH" id="presH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="presC" id="presC">
+                    </div>
+                    <div class="combinacion">
+                        <a>Combinacion</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="combH" id="combH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="combC" id="combC">
+                    </div>
+                    <div class="sobrehilado">
+                        <a>sobrehilado</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="sobreH" id="sobreH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="sobreC" id="sobreC">
+                    </div>
+                    <div class="seguridad">
+                        <a>Seguridad</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="seguridadH" id="seguridadH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="seguridadC" id="seguridadC">
+                    </div>
+                </div>  
+                <div class="cierre">
+                    <a class="titlefield">Cierre</a>
+                        <select class="tallaform" name="cierre" id="cierre">
+                            <option vale="6">6 cm</option>
+                            <option vale="8">8 cm</option>
+                            <option vale="10">10 cm</option>
+                            <option vale="12">12 cm</option>
+                            <option vale="15">15 cm</option>
+                            <option vale="18">18 cm</option>
+                        </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
