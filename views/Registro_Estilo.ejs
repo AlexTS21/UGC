@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/EstilosEMSS.css">
-    <title>ESTILOS EDICION</title>
+    <title>REGISTRO ESTILOS</title>
 </head>
 <body>
     <div class="container">
@@ -15,9 +15,9 @@
             <a class="ugc">UGC</a>
         </div>
         <div class="section">
-            <a class="page">EDICION DE ESTILOS</a>
+            <a class="page">REGISTRO DE ESTILOS</a>
         </div>
-        <form action="/validar" method="post">
+        <form action="/registro_estilos" method="post">
             <div class="fields">
                 <div class="datos">
                     <a class="titlefield">Datos del estilo</a>
@@ -30,8 +30,8 @@
                 </div>
                 <div class="tallas">
                     <a class="titlefield">Tallas</a>
-                    <div class="datet"><a>Talla</a></div>
-                    <input class="datin" type="text" placeholder="Talla.." name="talla" id="talla">
+                    <div class="datet"><a>Tallas</a></div>
+                    <input class="datin" type="text" placeholder="Talla.." name="tallas" id="tallas">
                 </div>
                 <div class="hilos">
                     <div class="guia">
@@ -70,6 +70,9 @@
                             <option vale="15">15 cm</option>
                             <option vale="18">18 cm</option>
                         </select>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Registrar">
                 </div>
             </div>
         </form>

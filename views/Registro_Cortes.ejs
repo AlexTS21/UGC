@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/EstilosEMSS.css">
+    <title>REGISTRO CORTES</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <a class="ugc">UGC</a>
+        </div>
+        <div class="section">
+            <a class="page">REGISTRO DE CORTES</a>
+        </div>
+        <form action="/registro_cortes" method="post">
+            <div class="fields">
+                <input class="inhi" type="text" placeholder="Folio Interno.." name="FolioInterno" id="FolioInterno">
+                <input class="inhi" type="text" placeholder="Fecha de pedido.." name="FechaPedido" id="FechaPedido">
+                <input class="inhi" type="text" placeholder="Cliente.." name="Cliente" id="Cliente">
+                <input class="inhi" type="text" placeholder="Tienda.." name="Tienda" id="Tienda">
+                <input class="inhi" type="text" placeholder="Orden.." name="Orden" id="Orden">
+                <input class="inhi" type="text" placeholder="Modelo.." name="Modelo" id="Modelo">
+                <input class="inhi" type="text" placeholder="Descripcion.." name="descrip" id="descrip">
+                <div>                    
+                    <a class="titlefield">Proporcion del corte</a>
+                    <input class="inhi" type="text" placeholder="Proporcion del corte.." name="proporcion" id="proporcion">
+                </div>                
+                <div>
+                    <a class="titlefield">Distribucion de Bultos</a>
+                    <input class="inhi" type="text" placeholder="Tono.." name="DBTono" id="DBTono">
+                    <input class="inhi" type="text" placeholder="Dobles.." name="DBDobles" id="DBDobles">
+                </div>
+                <div>
+                    <a class="titlefield">retazo</a>
+                    <input class="inhi" type="text" placeholder="Tono.." name="RetazoTono" id="RetazoTono">
+                    <input class="inhi" type="text" placeholder="Dobles.." name="RetazoDobles" id="RetazoDobles">
+                </div>
+                <div class="cierre">
+                    <a class="titlefield">Cierre</a>
+                        <select class="tallaform" name="cierre" id="cierre">
+                            <option vale="6">6 cm</option>
+                            <option vale="8">8 cm</option>
+                            <option vale="10">10 cm</option>
+                            <option vale="12">12 cm</option>
+                            <option vale="15">15 cm</option>
+                            <option vale="18">18 cm</option>
+                        </select>
+                </div>
+                <div class="hilos">
+                    <a class="titlefield">Especificacion de Hilos</a>
+                    <div class="guia">
+                        <a>Guia</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="guiaH" id="guiaH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="guiaC" id="modeloC">
+                    </div>
+                    <div class="presilla">
+                        <a>Presilla/Hojal</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="presH" id="presH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="presC" id="presC">
+                    </div>
+                    <div class="combinacion">
+                        <a>Combinacion</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="combH" id="combH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="combC" id="combC">
+                    </div>
+                    <div class="sobrehilado">
+                        <a>sobrehilado</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="sobreH" id="sobreH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="sobreC" id="sobreC">
+                    </div>
+                    <div class="seguridad">
+                        <a>Seguridad</a>
+                        <input class="inhi" type="text" placeholder="Hilo.." name="seguridadH" id="seguridadH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="seguridadC" id="seguridadC">
+                    </div>
+                </div> 
+                <div class="Confeccion">
+                    <a class="titlefield">Control de confeccion</a>
+                    <div class="Delantero">
+                        <a>Delantero</a>
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." name="FechaED" id="FechaED">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." name="SeEntD" id="SeEntD">
+                        <input class="inhi" type="text" placeholder="Entrego.." name="EntregoD" id="EntregoD">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." name="HabiD" id="HabiD">
+                        <input class="inhi" type="text" placeholder="Fecha Cobro.." name="CobroD" id="CobroD">
+                    </div>
+                    <div class="trsero">
+                        <a>Trasero</a>
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." name="FechaET" id="FechaET">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." name="SeEntT" id="SeEntT">
+                        <input class="inhi" type="text" placeholder="Entrego.." name="EntregoT" id="EntregoT">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." name="HabiT" id="HabiT">
+                        <input class="inhi" type="text" placeholder="Fecha Cobro.." name="CobroT" id="CobroT">
+                    </div>
+                    <div class="OPExternos">
+                        <a>OP. Externos</a>
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." name="FechaEOP" id="FechaEOP">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." name="SeEntOP" id="SeEntOP">
+                        <input class="inhi" type="text" placeholder="Entrego.." name="EntregoOP" id="EntregoOP">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." name="HabiOP" id="HabiOP">
+                        <input class="inhi" type="text" placeholder="Fecha Cobro.." name="CobroOP" id="CobroOP">
+                    </div>
+                    <div class="terminacion">
+                        <a>Terminacion</a>
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." name="FechaETE" id="FechaETE">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." name="SeEntTE" id="SeEntTE">
+                        <input class="inhi" type="text" placeholder="Entrego.." name="EntregoTE" id="EntregoTE">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." name="HabiTE" id="HabiTE">
+                        <input class="inhi" type="text" placeholder="Fecha Cobro.." name="CobroTE" id="CobroTE">
+                    </div>
+                    <div class="lavanderia">
+                        <a>Lavanderia</a>
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." name="FechaEL" id="FechaEL">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." name="SeEntL" id="SeEntL">
+                        <input class="inhi" type="text" placeholder="Entrego.." name="EntregoL" id="EntregoL">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." name="HabiL" id="HabiL">
+                        <input class="inhi" type="text" placeholder="Fecha Cobro.." name="CobroL" id="CobroL">
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Registrar">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
