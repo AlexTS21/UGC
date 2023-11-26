@@ -27,6 +27,20 @@ app.get("/", function(req, res){ //cuando yo ingrese al servidor se renderiza un
     res.render("index"); // la respuesta del servidor, es renderizar la pagina
 });
 
+// Renderiza el menu de los cortes 
+app.get("/Menu_Cortes", function(req, res){
+    res.render("Menu_Cortes");
+});
+
+app.get("/Menu_Estilos", function(req, res){
+    res.render("Menu_Estilos");
+});
+
+app.get("/Menu_Hilos", function(req, res){
+    res.render("Menu_Hilos");
+});
+
+
 // Pagina de Registro de Hilos
 app.get("/Registro_Hilos", function(req, res){ 
     res.render("Registro_Hilos"); // la respuesta del servidor, es renderizar la pagina
