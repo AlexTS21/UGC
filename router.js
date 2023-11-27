@@ -26,19 +26,24 @@ router.get("/Registro_Hilos", function(req, res){
     res.render("Registro_Hilos"); // la respuesta del servidor, es renderizar la pagina
 });
 
-const crud = require("./controllers/cruds");
-router.post('/registro_hilos', crud.registro_hilos);
+const registro_hilo = require("./controllers/registros");
+router.post('/registro_hilos', registro_hilo.registro_hilos);
 
 // Pagina de Registro de Estilos
 router.get("/Registro_Estilo", function(req, res){ 
     res.render("Registro_Estilo"); // la respuesta del servidor, es renderizar la pagina
 });
 
+const registro_estilo = require("./controllers/registros");
+router.post('/registro_estilos', registro_estilo.registro_estilos);
+
 // Pagina de Registro de Cortes
 router.get("/Registro_Cortes", function(req, res){ 
     res.render("Registro_Cortes"); // la respuesta del servidor, es renderizar la pagina
 });
 
+const registro_cortes = require("./controllers/registros");
+router.post('/registro_cortes', registro_cortes.registro_cortes);
 
 // Pagina de visualizacion de Hilos
 router.get("/Visualizar_Hilos", function(req, res){
