@@ -6,30 +6,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
-    <link rel="stylesheet" href="../estilos/EstilosEMSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/Registro_Hilos_Style.css">
     <title>REGISTRO HILOS</title>
 </head>
 <body>
     <div class="container">
         <div class="title">
-            <a class="ugc">UGC</a>
+            <div class="menu_left"><a href="Regresar_Menu"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div class="menu_center"><a class="ugc">Gestion de Estilos</a></div>
+            <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
         </div>
         <div class="section">
             <a class="page">REGISTRO DE HILOS</a>
         </div>
-        <form action="/registro_hilos" method="POST">
-            <div class="fields">
-                <div class="datos">
-                    <div class="datet"><a>Codigo</a></div>
-                    <input class="datin" type="text" placeholder="Codigo.." name="codigo" id="codigo">
-                    <div class="datet"><a>Nombre</a></div>
-                    <input class="datin" type="text" placeholder="Nombre.." name="name" id="name">
-                </div>
-                <div class="button">
-                    <input type="submit" value="Registrar">
-                </div>
-            </div>
-        </form>
+        <div class="fields">
+            <a class="titlefield">Hilo</a>
+            <div class="datet"><a>Codigo</a></div>
+            <input class="datin" type="text" placeholder="Codigo.." name="codigo" id="codigo">
+            <div class="datet"><a>Nombre</a></div>
+            <input class="datin" type="text" placeholder="Nombre.." name="name" id="name">
+            
+        </div>
+        <div class="button">
+            <input id="reg-but"  type="submit" value="Registrar">
+        </div> 
     </div>
 </body>
 </html>
