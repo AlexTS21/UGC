@@ -1,14 +1,18 @@
 html{
     width: 100%;
     height: 100%;
+    padding: 0;
+    margin:0;
 }
 
 body{
     width: inherit;
     height: inherit;
+    padding: 0;
+    margin:0;
 }
 
-button{
+input{
     width: 300px;
     height: 80px;
     border-radius: 12px;
@@ -47,10 +51,47 @@ button{
     font-family: 'League Spartan', sans-serif;
     font-size: 25px;
     font-weight: 900;
-    
 }
 
+.menu_left{
+    width: 30%;
+    padding-left: 30px;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+}
 
+.menu_center{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu_right{
+    width: 30%;
+    height: inherit;
+    padding-right: 30px;
+    display: flex;
+    align-items:center;
+    justify-content: right;
+}
+
+.regresar{
+    background-color: #1D1F21;
+    height: 40px;
+    width: 80px;
+    font-size: small;
+    letter-spacing: normal;
+}
+
+.user{
+    background-color: #1D1F21;
+    height: 40px;
+    width: 80px;
+    font-size: small;
+    letter-spacing: normal;
+}
 
 .but{
     height: 600px;
@@ -60,7 +101,7 @@ button{
     background-color: #121314;
 }
 
-button:hover{
+input:hover{
     border-color: #121314;
     background-color: aliceblue;
     color: #121314;
