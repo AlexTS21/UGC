@@ -21,6 +21,6 @@ conexion.query(usuarios, function(error, list){
     }else{
         console.log(list);
     }
-})
+});
 
 conexion.end();

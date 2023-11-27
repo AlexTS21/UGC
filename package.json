@@ -2,9 +2,10 @@
   "name": "ugc",
   "version": "1.0.0",
   "description": "UGC Software",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch app.js"
   },
   "keywords": [],
   "author": "Joctan_Maceda, Alejandro_Tejeda",
@@ -13,6 +14,7 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "js": "^0.1.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "nodemon": "^3.0.1"
   }
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <link rel="stylesheet" href="../estilos/EstilosEMSS.css">
+    <title>VISUALIZAR HILOS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <a class="ugc">UGC</a>
+        </div>
+        <div class="section">
+            <a class="page">VISUALIZAR HILOS</a>
+        </div>
+        <form action="/buscar_hilos" method="POST">
+            <div class="fields">
+                <div class="datos">
+                    <div class="datet"><a>Codigo</a></div>
+                    <input class="datin" type="text" placeholder="Codigo.." name="codigo" id="codigo">
+                </div>
+                <div class="button">
+                    <input type="submit" value="Buscar">
+                </div>
+                <div>
+                    <input type="text" name="resultado" id="resultado">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

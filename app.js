@@ -1,20 +1,12 @@
 // Importamos la libreria express::::::::::::::::::::::::::::::::::::::::::::::::::::::
 const { openDelimiter } = require("ejs");
 const express = require("express"); 
-const mysql = require("mysql");
-
 
 // Objetos para llamar los metodos de express::::::::::::::::::::::::::::::::::::::::::
 const app = express();
 
 // Conexion con la base de datos:::::::::::::::::::::::::::::::::::::::::::::::::;:::::
-let conexion = mysql.createConnection({
-    host: 'localhost',
-    database: 'maquiladora_ugc',
-    user: 'root',
-    password: ''
-});
-
+const conexion = require("./database/db");
 
 // Configuraciones de las diferentes paginas::::::::::::::::::::::::::::::::::::::::::::::::
 app.set("view engine", "ejs");
@@ -22,42 +14,14 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({extended: false})); // Es para analizar los datos que venga de un html
 
-// Pagina principal
-app.get("/", function(req, res){ //cuando yo ingrese al servidor se renderiza una pantalla
-    res.render("index"); // la respuesta del servidor, es renderizar la pagina
-});
-
-// Renderiza el menu de los cortes 
-app.get("/Menu_Cortes", function(req, res){
-    res.render("Menu_Cortes");
-});
-
-app.get("/Menu_Estilos", function(req, res){
-    res.render("Menu_Estilos");
-});
-
-app.get("/Menu_Hilos", function(req, res){
-    res.render("Menu_Hilos");
-});
+app.use("/", require("./router"));
 
 
-// Pagina de Registro de Hilos
-app.get("/Registro_Hilos", function(req, res){ 
-    res.render("Registro_Hilos"); // la respuesta del servidor, es renderizar la pagina
-});
 
-// Pagina de Registro de Estilos
-app.get("/Registro_Estilo", function(req, res){ 
-    res.render("Registro_Estilo"); // la respuesta del servidor, es renderizar la pagina
-});
-
-// Pagina de Registro de Cortes
-app.get("/Registro_Cortes", function(req, res){ 
-    res.render("Registro_Cortes"); // la respuesta del servidor, es renderizar la pagina
-});
 
 // Funcion para registrar los hilos en la base de datos
 // Primero verifica que  no exista un hilo igual
+/*
 app.post("/registrar_hilos", function(req, res){
     const Hilos = req.body;
     let codigo = Hilos.codigo;
@@ -87,6 +51,7 @@ app.post("/registrar_hilos", function(req, res){
 // Funcion para registrar los estilos en la base de datos
 // Primero verifica que  no exista un estilo igual
 app.post("/registro_estilos", function(req, res){
+    
     const estilos = req.body;
     let modelo = estilos.modelo;
     let descrip = estilos.descrip;
@@ -124,6 +89,23 @@ app.post("/registro_estilos", function(req, res){
         }
     });    
     res.redirect("/");
+});
+
+// Fucion para buscar algun elemento de Hilos
+app.post("/buscar_hilos", function(req, res){
+    let hilos_pagina = req.body;
+    let codigo = hilos_pagina.codigo;
+
+    const hilo_db = "SELECT * FROM hilos WHERE codigo = '"+codigo+"' ";
+    conexion.query(hilo_db, function(error, row){
+        if(error){
+            throw error;
+        }else{
+            res.render("Visualizar_Hilos", {
+                //hilos_pagina.resultado;  //<---aca le paso el resultado de la consulta
+            });
+        }
+    });
 });
 
 // Funcion para registrar los cortes en la base de datos
@@ -206,7 +188,7 @@ app.post("/registro_cortes", function(req, res){
 
     res.redirect("/");
 });
-
+*/
 // Middleware:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 app.use(express.static("public"));
 
@@ -217,5 +199,4 @@ app.use(express.static("public"));
 
 // configurar el puerto usado por el servidor local:::::::::::::::::::::::::::::::::::::
 app.listen(5000, function(){
-    console.log("El servidor es: http://localhost:5000");
 });
