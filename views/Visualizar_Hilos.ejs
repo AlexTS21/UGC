@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="title">
-            <div class="menu_left"><a href="Regresar_Menu"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div class="menu_left"><a href="Menu_Hilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
             <div class="menu_center"><a class="ugc">Menu estilos</a></div>
             <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
         </div>
@@ -20,17 +20,27 @@
             <a class="page">VISUALIZAR HILOS</a>
         </div>
         <div class="datet"><a>Codigo</a></div>
-        <form class="content" action="/buscar_hilos" method="POST">
-                
-                <div class="searchbar">
-                    <input id="bar" class="datin" type="text" placeholder="Codigo.." name="codigo" id="codigo">
-                    <input id="searchBut" type="submit" value="Buscar">
-                </div>
-                <div>
-                    <input id="resultado" type="text" name="resultado" id="resultado">
-                </div>
-        </form>
-       
+        <table class="table table-borderred table-striped text-center mt-4">
+            <thead>
+                <tr><th> Codigo </th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach((hilo) => { %>
+                    
+                <tr>
+                    <td><%= hilo.Codigo %></td>
+                    <td><%= hilo.Nombre %></td>
+                    <td>
+                        <a href="/editar" class="btn_menu">Editar</a>
+                        <a href="/eliminar" class="btn_menu">Eiminar</a>
+                    </td>
+                </tr>
+
+                <% }) %> 
+            </tbody>
+        </table>            
     </div>
 </body>
 </html>

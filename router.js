@@ -43,11 +43,21 @@ router.get("/Registro_Cortes", function(req, res){
 });
 
 const registro_cortes = require("./controllers/registros");
+const conexion = require("./database/db");
+const { render } = require("ejs");
 router.post('/registro_cortes', registro_cortes.registro_cortes);
 
 // Pagina de visualizacion de Hilos
-router.get("/Visualizar_Hilos", function(req, res){
-    res.render("Visualizar_Hilos");
+router.get("/Visualizar_Hilos", (req, res) => {
+
+    conexion.query("SELECT * FROM hilos ", (error, results) => {
+        if(error){
+            throw error;
+        }else{
+            res.render("Visualizar_Hilos", {results : results});
+        }
+    });
+    
 });
 
 module.exports = router;
