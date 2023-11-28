@@ -7,6 +7,9 @@ body{
   font-family: sans-serif;
   background: linear-gradient(rgb(192, 154, 70), rgb(156, 130, 72));
 }
+a{
+  color: #fff;
+}
 .login-box{
   position: absolute;
   top: 50%;
@@ -16,7 +19,7 @@ body{
   transform: translate(-50%,-50%);
   background: rgba(0 ,0 ,0 ,.5);
   box-shadow: 0 15px 25px
-              rgba(0 ,0 ,0 ,.6);
+              rgba(0 ,0 ,0 ,.5);
   border-radius: 10px;
 }
 .login-box h2{
