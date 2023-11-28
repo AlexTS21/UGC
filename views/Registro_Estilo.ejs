@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/Registro_Estilos_Style.css">
+    <title>REGISTRO ESTILOS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="menu_left"><a href="Menu_Estilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div class="menu_center"><a class="ugc">Menu estilos</a></div>
+            <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
+        </div>
+        <div class="section">
+            <a class="page">REGISTRO DE ESTILOS</a>
+        </div>
+        <form action="/registro_estilos" method="post">
+            <div class="fields">
+                <div class="datos">
+                    <a class="titlefield">Datos del estilo</a>
+                    <div class="datet"><a>Modelo</a></div>
+                    <input class="datin" type="text" placeholder="Modelo.." name="modelo" id="modelo">
+                    <div class="datet"><a>Descripcion</a></div>
+                    <input class="datin" type="text" placeholder="Descripcion.." name="descrip" id="descrip">
+                    <div class="datet"><a>Tela</a></div>
+                    <input class="datin" type="text" placeholder="Tela.." name="tela" id="tela">
+                </div>
+                <div class="tallas">
+                    <a class="titlefield">Tallas</a>
+                    <div class="datet"><a>Tallas</a></div>
+                    <input class="datin" type="text" placeholder="Talla.." name="tallas" id="tallas">
+                </div>
+                <div class="hilos">
+                    <a class="titlefield">Hilos</a>
+                    <div class="datet"><a>Guia</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." name="guiaH" id="guiaH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="guiaC" id="modeloC">
+                    </div>
+                    <div class="datet"><a>Presilla</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." name="presH" id="presH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="presC" id="presC">
+                    </div>
+                    
+                    <div class="datet"><a>Combinacion</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." name="combH" id="combH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="combC" id="combC">
+                    </div>
+                    
+                    <div class="datet"><a>Sobrehilado</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." name="sobreH" id="sobreH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="sobreC" id="sobreC">
+                    </div>
+                    
+                    <div class="datet"><a>Seguridad</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." name="seguridadH" id="seguridadH">
+                        <input class="inhi" type="text" placeholder="Calibre.." name="seguridadC" id="seguridadC">
+                    </div>
+                </div>  
+                <div class="cierre">
+                    <a class="titlefield">Cierre</a>
+                        <select class="tallaform" name="cierre" id="cierre">
+                            <option vale="6">6 cm</option>
+                            <option vale="8">8 cm</option>
+                            <option vale="10">10 cm</option>
+                            <option vale="12">12 cm</option>
+                            <option vale="15">15 cm</option>
+                            <option vale="18">18 cm</option>
+                        </select>
+                </div>
+                <div class="button">
+                    <input id="reg-but" type="submit" value="REGISTRAR">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

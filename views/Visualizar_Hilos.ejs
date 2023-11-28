@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/Buscar_Style.css">
+    <title>VISUALIZAR HILOS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="menu_left"><a href="Menu_Hilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div class="menu_center"><a class="ugc">Menu estilos</a></div>
+            <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
+        </div>
+        <div class="section">
+            <a class="page">VISUALIZAR HILOS</a>
+        </div>
+        <div class="datet"><a>Codigo</a></div>
+        <table class="table table-borderred table-striped text-center mt-4">
+            <thead>
+                <tr><th> Codigo </th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach((hilo) => { %>
+                    
+                <tr>
+                    <td><%= hilo.Codigo %></td>
+                    <td><%= hilo.Nombre %></td>
+                    <td>
+                        <a href="/editar" class="btn_menu">Editar</a>
+                        <a href="/eliminar" class="btn_menu">Eiminar</a>
+                    </td>
+                </tr>
+
+                <% }) %> 
+            </tbody>
+        </table>            
+    </div>
+</body>
+</html>
