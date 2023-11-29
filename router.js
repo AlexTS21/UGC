@@ -67,22 +67,50 @@ router.post('/login', async (req, res) =>{
     }
 
 });
+
+
 /////////////////////////// PAGINAS - RENDERIZADO /////////////////////////////
 // Pagina principal
 router.get("/", function(req, res){ //cuando yo ingrese al servidor se renderiza una pantalla
-    res.render("index"); // la respuesta del servidor, es renderizar la pagina
+    if(req.session.loggedin){
+        res.render("index", {
+            login: true
+        });
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+     // la respuesta del servidor, es renderizar la pagina
 });
 
 
 // Pagina de Registro de Hilos
 router.get("/Registro_Hilos", function(req, res){ 
-    res.render("Registro_Hilos"); // la respuesta del servidor, es renderizar la pagina
+    if(req.session.loggedin){
+        res.render("Registro_Hilos", {
+            login: true
+        });
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+     // la respuesta del servidor, es renderizar la pagina
 });
 router.post('/registro_hilos', crud.registro_hilos);
 
 
 router.get("/Login1", function(req, res){
-    res.render("Login1");
+    if(req.session.loggedin){
+        res.render("Login1", {
+            login: true
+        });
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
 });
 
 
@@ -96,28 +124,42 @@ router.get("/Register", function(req, res){
 
 // Pagina de Registro de Estilos
 router.get("/Registro_Estilo", function(req, res){ 
-    res.render("Registro_Estilo"); // la respuesta del servidor, es renderizar la pagina
+    if(req.session.loggedin){
+        res.render("Registro_Estilo", {
+            login: true
+        });
+    }else{
+        res.render("login", {
+            login: true
+        });
+    } // la respuesta del servidor, es renderizar la pagina
 });
 router.post('/registro_estilos', crud.registro_estilos);
 
 // Pagina de Registro de Cortes
 router.get("/Registro_Cortes", function(req, res){ 
-    res.render("Registro_Cortes"); // la respuesta del servidor, es renderizar la pagina
+    if(req.session.loggedin){
+        res.render("Registro_Cortes", {
+            login: true
+        });
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }  // la respuesta del servidor, es renderizar la pagina
 });
 router.post('/registro_cortes', crud.registro_cortes);
 
 
 // Pagina de visualizacion de Hilos
 router.get("/Visualizar_Hilos", (req, res) => {
-
     conexion.query("SELECT * FROM hilos ", (error, results) => {
         if(error){
             throw error;
         }else{
             res.render("Visualizar_Hilos", {results : results});
         }
-    });
-    
+    });     
 });
 
 // Ruta para visualizar los cortes
