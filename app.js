@@ -24,8 +24,6 @@ app.use(express.static("public"));
 /////////////////////////////////////
 
 
-
-
 // configurar el puerto usado por el servidor local:::::::::::::::::::::::::::::::::::::
 app.listen(5000, function(){
 });

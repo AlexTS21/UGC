@@ -16,8 +16,7 @@ exports.registro_hilos = (req, res) => {
                 conexion.query(registrar, function(error){
                     if(error){
                         throw error;
-                    }else{
-                        alert("Datos almacenados correctamente");
+                    }else{                        
                         console.log("Datos almacenados correctamente");
                     }
                 });
