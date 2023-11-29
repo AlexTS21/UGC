@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/Registro_Hilos_Style.css">
+    <title>SignUp</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="menu_center"><a class="ugc">SignUP</a></div>
+            
+        </div>
+        <div class="section">
+            <a class="page"> Registrarse</a>
+        </div>
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <input type="text" name="fullname" placeholder="Full Name" class="form-control" autofocus> 
+            </div>
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-block">
+                    SignUp
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

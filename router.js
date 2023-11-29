@@ -186,4 +186,6 @@ router.get("/Estilo_completo/:Modelo", (req, res) =>{
     });
 });
 
+
+
 module.exports = router;
