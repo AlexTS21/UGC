@@ -3,11 +3,7 @@ html{
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'League Spartan', sans-serif;
-    font-size: medium;
-    letter-spacing:normal;
     color: aliceblue;
-    text-decoration: none;
 }
 
 body{
@@ -70,7 +66,7 @@ body{
     height: 40px;
     width: 80px;
     border-radius: 12px;
-    border-color: aliceblue;
+    border: solid 2px aliceblue;
     background-color: #1D1F21;
     color: aliceblue;
     transition: 0.8s;
@@ -95,84 +91,100 @@ body{
     letter-spacing: 1.5px;
 }
 
-.datet{
-    width:60%;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: last baseline;
-    justify-content: baseline;
-    color: aliceblue;
-    background-color: #121314;
-    font-family: 'League Spartan', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-
+#table_cont{
+    height: 60%;
+    width: 120vh;
+    margin: 30px;
+    background-color: #1D1F21;
+    border: solid 3px aliceblue;
+    border-radius: 5px;
 }
-.content{
+
+table{
+    
     width: inherit;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: first baseline;
-    align-items: first center;
-}
-
-.searchbar{
-    width: 60%;
-    height: 80px;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: first baseline;
-    justify-content: center;
-}
-
-#bar{
-    width: 60%;
-    height: 35px;
-    padding-left: 10px;
-    background-color: #121314;
-    border-radius: 5px 0 0 5px;
-    border: solid 2px aliceblue;
-    border-right: none;
-    color: aliceblue;
-    outline: none;
+    height: inherit;
+    margin: auto;
+    padding: 10px;
+    table-layout: fixed;
     font-family: 'League Spartan', sans-serif;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: 1.5px;
 }
 
-#searchBut{
-    height: 41px;
-    border-radius: 0 5px 5px 0;
-    border-color: aliceblue;
-    background-color: aliceblue;
-    border-right: solid 2px aliceblue;
-    border-top: solid 2px aliceblue;
-    border-bottom: solid 2px aliceblue;
-    border-left:none;
+thead{
+    background-color: #1D1F21;
     font-family: 'League Spartan', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: normal;
-    position: relative;
-    transition: 0.2s;
+    font-size: 25px;
+    letter-spacing:normal;
+    color: aliceblue;
+    text-decoration: none;
+    transition: 0.8s;
+    text-transform: uppercase;
 }
 
-#searchBut:hover{
+th{
+    padding: 10px 5px;
+}
+
+td{
+    padding: 20px 15px;
+    
+}
+
+
+.btn_tabla{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
     background-color: #121314;
-    border-right: solid 2px aliceblue;
-    border-top: solid 2px aliceblue;
-    border-bottom: solid 2px aliceblue;
+    border: solid 3px aliceblue;
+    border-radius: 5px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: medium;
+    letter-spacing:normal;
+    color: aliceblue;
+    text-decoration: none;
+    transition: 0.8s;
+}
+
+.btn_tabla:hover{
+    background-color: #121314;
     color: aliceblue;
 }
 
-.btn_menu:hover{
-    border-color: #121314;
+.btn_registro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    background-color: #121314;
+    border: solid 3px aliceblue;
+    border-radius: 5px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: medium;
+    letter-spacing:normal;
+    color: aliceblue;
+    text-decoration: none;
+    transition: 0.8s;
+}
+
+.btn_registro:hover{
     background-color: aliceblue;
     color: #121314;
-    size: 110%;
+}
+
+.invisible{
+    color: #121314;
+}
+
+.cont_but{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }

@@ -21,6 +21,8 @@ router.use(session({
     saveUninitialized: true
 }));
 
+
+
 router.post('/register', async (req, res) =>{
     const user = req.body;
     const Nombre = user.name;
@@ -57,6 +59,7 @@ router.post('/login', async (req, res) =>{
                 console.log("incorrecto");
                 res.redirect('Login');
             }else{
+                req.session.loggedin = true;
                 console.log('correcto');
                 res.redirect('/');
             }
@@ -76,6 +79,11 @@ router.get("/Registro_Hilos", function(req, res){
     res.render("Registro_Hilos"); // la respuesta del servidor, es renderizar la pagina
 });
 router.post('/registro_hilos', crud.registro_hilos);
+
+
+router.get("/Login1", function(req, res){
+    res.render("Login1");
+});
 
 
 router.get("/Login", function(req, res){
