@@ -8,7 +8,6 @@ const app = express();
 // Conexion con la base de datos:::::::::::::::::::::::::::::::::::::::::::::::::;:::::
 const conexion = require("./database/db");
 
-
 // Configuraciones de las diferentes paginas::::::::::::::::::::::::::::::::::::::::::::::::
 app.set("view engine", "ejs");
 app.use(express.json());

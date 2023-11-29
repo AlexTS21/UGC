@@ -162,5 +162,28 @@ router.get("/Eliminar_estilos/:Modelo", (req, res) =>{
     });
 });
 
+// Ruta para ver completo el corte
+router.get("/Corte_completo/:Folio_interno", (req, res) =>{
+    const Folio_interno = req.params.Folio_interno;
+    conexion.query("SELECT * FROM cortes WHERE Folio_interno = ?", [Folio_interno], (error, results) => {
+        if(error){
+            throw error;
+        }else{
+            res.render("Corte_completo", {corte: results[0]});
+        }
+    });
+});
+
+// Ruta para ver completo el estilo
+router.get("/Estilo_completo/:Modelo", (req, res) =>{
+    const Modelo = req.params.Modelo;
+    conexion.query("SELECT * FROM estilos WHERE Modelo = ?", [Modelo], (error, results) => {
+        if(error){
+            throw error;
+        }else{
+            res.render("Estilo_completo", {estilo: results[0]});
+        }
+    });
+});
 
 module.exports = router;

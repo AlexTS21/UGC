@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/Buscar_Style.css">
+    <title>Estilo completo
+    </title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="menu_left"><a href="../Visualizar_estilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div class="menu_center"><a class="ugc">Menu estilos</a></div>
+            <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
+        </div>
+        <div class="section">
+            <a class="page">ESTILO COMPLETO</a>
+        </div>
+        <div class="section">
+            <a class="page">Datos del estilo</a>
+        </div>        
+        <table class="table table-borderred table-striped text-center mt-4">
+            <thead>
+                <tr>
+                    <th> Modelo </th>
+                    <th>Descripcion</th>
+                    <th> Tela </th>
+                    <th> Tallas </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (estilo) { %>                    
+                <tr>
+                    <td><%= estilo.Modelo %></td>
+                    <td><%= estilo.Descripcion %></td>
+                    <td><%= estilo.Tela %></td>
+                    <td><%= estilo.Tallas %></td>                    
+                </tr>
+                <% } %> 
+            </tbody>
+        </table> 
+        <div class="section">
+            <a class="page">Hilos</a>
+        </div>
+        <table class="table table-borderred table-striped text-center mt-4">
+            <thead>
+                <tr>
+                    <th> Guia </th>
+                    <th> Presilla </th> 
+                    <th> Combinacion </th>      
+                    <th> Sobrehilado </th>
+                    <th> Seguridad </th>            
+                </tr>
+            </thead>
+            
+            <tbody>
+                <% if (estilo) { %>                    
+                <tr>
+                    <td>Hilo: <%= estilo.Guia_hilo %>, Calibre: <%= estilo.Guia_calibre%></td> 
+                    <td>Hilo: <%= estilo.Presilla_hilo %>, Calibre: <%= estilo.Presilla_calibre%></td> 
+                    <td>Hilo: <%= estilo.Combinacion_hilo %>, Calibre: <%= estilo.Combinacion_calibre%></td> 
+                    <td>Hilo: <%= estilo.Sobrehilado_hilo %>, Calibre: <%= estilo.Sobrehilado_calibre%></td> 
+                    <td>Hilo: <%= estilo.Seguridad_hilo %>, Calibre: <%= estilo.Seguridad_calibre%></td>                                    
+                </tr>
+                <% } %>
+        </table> 
+        <div class="section">
+            <a class="page">Cierre: <%= estilo.Cierre %></a>
+        </div>
+        
+    </div>
+</body>
+</html>
