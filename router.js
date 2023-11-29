@@ -7,22 +7,67 @@ const { render } = require("ejs");
 
 const crud = require("./controllers/crud");
 
+//////////////////////////////////////////////
+
+const dotenv = require('dotenv');
+dotenv.config({path: './env/.env'});
+
+const bcryptsjs = require('bcryptjs');
+
+const session = require('express-session');
+router.use(session({
+    secret: '1234578',
+    resave: true,
+    saveUninitialized: true
+}));
+
+router.post('/register', async (req, res) =>{
+    const user = req.body;
+    const Nombre = user.name;
+    const password = user.password;
+    let Contrasena = await bcryptsjs.hash(password, 8);
+
+    conexion.query('INSERT INTO usuarios SET ?', [{Nombre:Nombre, Contrasena:Contrasena}], (error, results) =>{
+        if(error){
+            throw error;
+        }else{/*
+            res.redirect('register', {
+                alert: true,
+                alertTitle: "Registrado",
+                alertMessage: "Correctemente registrado",
+                alertIcon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+                ruta: ''
+            });*/
+            res.redirect('Login');
+            console.log('usuario registrado');
+        }
+    })
+});
+
+router.post('/login', async (req, res) =>{
+    const user = req.body;
+    const name = user.name;
+    const password = user.password;
+    let Contrasena = await bcryptsjs.hash(password, 8);
+    if ( name && password ){
+        conexion.query('SELECT * FROM usuarios WHERE Nombre = ?', [name], async (error, results) => {
+            if(results.length == 0 || !(await bcryptsjs.compare(password, results[0].Contrasena))){
+                console.log("incorrecto");
+                res.redirect('Login');
+            }else{
+                console.log('correcto');
+                res.redirect('/');
+            }
+        });
+    }
+
+});
+/////////////////////////// PAGINAS - RENDERIZADO /////////////////////////////
 // Pagina principal
 router.get("/", function(req, res){ //cuando yo ingrese al servidor se renderiza una pantalla
     res.render("index"); // la respuesta del servidor, es renderizar la pagina
-});
-
-// Renderiza el menu de los cortes 
-router.get("/Menu_Cortes", function(req, res){
-    res.render("Menu_Cortes");
-});
-
-router.get("/Menu_Estilos", function(req, res){
-    res.render("Menu_Estilos");
-});
-
-router.get("/Menu_Hilos", function(req, res){
-    res.render("Menu_Hilos");
 });
 
 
@@ -33,6 +78,13 @@ router.get("/Registro_Hilos", function(req, res){
 router.post('/registro_hilos', crud.registro_hilos);
 
 
+router.get("/Login", function(req, res){
+    res.render("Login");
+});
+
+router.get("/Register", function(req, res){
+    res.render("Register");
+});
 
 // Pagina de Registro de Estilos
 router.get("/Registro_Estilo", function(req, res){ 
@@ -161,6 +213,31 @@ router.get("/Eliminar_estilos/:Modelo", (req, res) =>{
         }
     });
 });
+
+// Ruta para ver completo el corte
+router.get("/Corte_completo/:Folio_interno", (req, res) =>{
+    const Folio_interno = req.params.Folio_interno;
+    conexion.query("SELECT * FROM cortes WHERE Folio_interno = ?", [Folio_interno], (error, results) => {
+        if(error){
+            throw error;
+        }else{
+            res.render("Corte_completo", {corte: results[0]});
+        }
+    });
+});
+
+// Ruta para ver completo el estilo
+router.get("/Estilo_completo/:Modelo", (req, res) =>{
+    const Modelo = req.params.Modelo;
+    conexion.query("SELECT * FROM estilos WHERE Modelo = ?", [Modelo], (error, results) => {
+        if(error){
+            throw error;
+        }else{
+            res.render("Estilo_completo", {estilo: results[0]});
+        }
+    });
+});
+
 
 
 module.exports = router;

@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../estilos/Buscar_Style.css">
+    <link rel="stylesheet" href="../estilos/Visualizacion_Estilos_Style.css">
     <title>VISUALIZAR ESTILOS
     </title>
 </head>
@@ -20,8 +20,9 @@
         <div class="section">
             <a class="page">VISUALIZAR ESTILOS</a>
         </div>
-        <a href="Registro_Estilo" class="btn_menu">Registrar</a>
-        <table class="table table-borderred table-striped text-center mt-4">
+        <a href="Registro_Estilo" class="btn_registro">Registrar</a>
+        <div id="table_cont">
+        <table >
             <thead>
                 <tr>
                     <th> Modelo </th>
@@ -39,11 +40,13 @@
                     <td>
                         <a href="/Edicion_estilos/<%= estilo.Modelo %>" class="btn_menu">Editar</a>
                         <a href="/Eliminar_estilos/<%= estilo.Modelo %>" class="btn_menu">Eiminar</a>
+                        <a href="/Estilo_completo/<%= estilo.Modelo %>" class="btn_menu">Ver mas ...</a>
                     </td>
                 </tr>
                 <% }) %> 
             </tbody>
-        </table>            
+        </table>     
+        </div>       
     </div>
 </body>
 </html>

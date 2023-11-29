@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/Buscar_Style.css">
+    <title>Corte completo
+    </title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="menu_left"><a href="../Visualizar_cortes"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div class="menu_center"><a class="ugc">Menu cortes</a></div>
+            <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
+        </div>
+        <div class="section">
+            <a class="page">CORTE COMPLETO</a>
+        </div>        
+        <table class="table table-borderred table-striped text-center mt-4">
+            <thead>
+                <tr>
+                    <th> Folio Interno </th>
+                    <th>Fecha de Pedido</th>
+                    <th> Cliente </th>
+                    <th>Tienda</th>
+                    <th>Orden</th>
+                    <th> Modelo </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (corte) { %>                    
+                <tr>
+                    <td><%= corte.Folio_interno %></td>
+                    <td><%= corte.Fecha_pedido %></td>
+                    <td><%= corte.Cliente %></td>
+                    <td><%= corte.Tienda %></td>
+                    <td><%= corte.Orden %></td>
+                    <td><%= corte.Modelo%></td>
+                </tr>
+                <% } %> 
+            </tbody>
+        </table> 
+        <table class="table table-borderred table-striped text-center mt-4">
+            <thead>
+                <tr>
+                    <th> Descripcion </th>                   
+                </tr>
+            </thead>
+            <tbody>
+                <% if (corte) { %>                    
+                <tr>
+                    <td><%= corte.Descripcion %></td>                
+                </tr>
+                <% } %> 
+            </tbody>
+        </table>  
+        <table class="table table-borderred table-striped text-center mt-4">
+            <thead>
+                <tr>
+                    <th> Proporcion Corte </th>
+                    <th> Distribucion de bultos </th> 
+                    <th> Retazo </th>      
+                    <th> Cierre </th>            
+                </tr>
+            </thead>
+            <tbody>
+                <% if (corte) { %>                    
+                <tr>
+                    <td><%= corte.Proporcion_corte %></td> 
+                    <td><%= corte.TonoDB %> Tonos, <%= corte.DoblesDB %> Dobles</td> 
+                    <td><%= corte.TonoRetazo %> Tonos, <%= corte.RetazoDobles %> Dobles</td> 
+                    <td><%= corte.Cierre %></td>                
+                </tr>
+                <% } %> 
+            </tbody>
+        </table>
+        <div class="section">
+            <a class="page">Hilos</a>
+        </div>
+        <table class="table table-borderred table-striped text-center mt-4">
+            <thead>
+                <tr>
+                    <th> Guia </th>
+                    <th> Presilla </th> 
+                    <th> Combinacion </th>      
+                    <th> Sobrehilado </th>
+                    <th> Seguridad </th>            
+                </tr>
+            </thead>
+            
+            <tbody>
+                <% if (corte) { %>                    
+                <tr>
+                    <td>Hilo: <%= corte.Guia_hilo %>, Calibre: <%= corte.Guia_calibre%></td> 
+                    <td>Hilo: <%= corte.Presilla_hilo %>, Calibre: <%= corte.Presilla_calibre%></td> 
+                    <td>Hilo: <%= corte.Combinacion_hilo %>, Calibre: <%= corte.Combinacion_calibre%></td> 
+                    <td>Hilo: <%= corte.Sobre_hilo %>, Calibre: <%= corte.Sobre_calibre%></td> 
+                    <td>Hilo: <%= corte.Seguridad_hilo %>, Calibre: <%= corte.Seguridad_calibre%></td>                                    
+                </tr>
+                <% } %> 
+            </tbody>
+        </table>  
+        <div class="section">
+            <a class="page">Control de Confeccion</a>
+        </div> 
+        <table class="table table-borderred table-striped text-center mt-4">
+            <thead>
+                <tr>
+                    <th> Delantero</th>
+                    <th>Trasero</th>
+                    <th> OP. Externos </th>
+                    <th>Terminacion</th>
+                    <th>Lavanderia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (corte) { %>                    
+                <tr>
+                    <td><%= corte.DelanteroFE %></td>
+                    <td><%= corte.TraseroFE %></td>
+                    <td><%= corte.OPFE %></td>
+                    <td><%= corte.TerminacionFE %></td>
+                    <td><%= corte.LavanderiaFE %></td>
+                </tr>
+                <tr>
+                    <td><%= corte.DelanteroSEA %></td>
+                    <td><%= corte.TraseroSEA %></td>
+                    <td><%= corte.OPSEA %></td>
+                    <td><%= corte.TerminacionSEA %></td>
+                    <td><%= corte.LavanderiaSEA %></td>
+                </tr>
+                <tr>
+                    <td><%= corte.DelanteroE %></td>
+                    <td><%= corte.TraseroE %></td>
+                    <td><%= corte.OPE %></td>
+                    <td><%= corte.TerminacionE %></td>
+                    <td><%= corte.LavanderiaE %></td>
+                </tr>
+                <tr>
+                    <td><%= corte.DelanteroH %></td>
+                    <td><%= corte.TraseroH %></td>
+                    <td><%= corte.OPH %></td>
+                    <td><%= corte.TerminacionH%></td>
+                    <td><%= corte.LavanderiaH %></td>
+                </tr>
+                <tr>
+                    <td><%= corte.DelanteroFC %></td>
+                    <td><%= corte.TraseroFC %></td>
+                    <td><%= corte.OPFC %></td>
+                    <td><%= corte.TerminacionFC %></td>
+                    <td><%= corte.LavanderiaFC %></td>
+                </tr>                
+                <% } %> 
+            </tbody>
+        </table>          
+    </div>
+</body>
+</html>

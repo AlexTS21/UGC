@@ -14,7 +14,7 @@
     <div class="container">
         <div class="title">
             <div class="menu_left"><a href="/"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
-            <div class="menu_center"><a class="ugc">Menu estilos</a></div>
+            <div class="menu_center"><a class="ugc">Menu cortes</a></div>
             <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
         </div>
         <div class="section">
@@ -41,6 +41,7 @@
                     <td>
                         <a href="/Edicion_cortes/<%= corte.Folio_interno %>" class="btn_menu">Editar</a>
                         <a href="/Eliminar_cortes/<%= corte.Folio_interno %>" class="btn_menu">Eiminar</a>
+                        <a href="/Corte_completo/<%= corte.Folio_interno %>" class="btn_menu">Ver mas ...</a>
                     </td>
                 </tr>
                 <% }) %> 
