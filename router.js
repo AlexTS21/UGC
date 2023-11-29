@@ -157,9 +157,7 @@ router.get("/Visualizar_Hilos", (req, res) => {
         if(error){
             throw error;
         }else{
-            res.render("Visualizar_Hilos", {results : results}, {
-                login: true
-            });
+            res.render("Visualizar_Hilos", {results : results});
         }
     });     
 });
