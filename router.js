@@ -68,7 +68,11 @@ router.post('/login', async (req, res) =>{
 
 });
 
-
+router.get('/logout', (req, res) =>{
+    req.session.destroy(() => {
+        res.redirect('/Login');
+    })
+} )
 /////////////////////////// PAGINAS - RENDERIZADO /////////////////////////////
 // Pagina principal
 router.get("/", function(req, res){ //cuando yo ingrese al servidor se renderiza una pantalla
@@ -153,139 +157,255 @@ router.post('/registro_cortes', crud.registro_cortes);
 
 // Pagina de visualizacion de Hilos
 router.get("/Visualizar_Hilos", (req, res) => {
-    conexion.query("SELECT * FROM hilos ", (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.render("Visualizar_Hilos", {results : results});
-        }
-    });     
+    if(req.session.loggedin){
+        conexion.query("SELECT * FROM hilos ", (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.render("Visualizar_Hilos",{results : results});
+            }
+        });           
+    }else{
+        res.render("login", {
+            login: true
+        });
+    } 
+     
 });
 
 // Ruta para visualizar los cortes
 router.get("/Visualizar_cortes", (req, res) => {
 
-    conexion.query("SELECT * FROM cortes ", (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.render("Visualizar_cortes", {results : results});
-        }
-    });
+    if(req.session.loggedin){
+        conexion.query("SELECT * FROM cortes ", (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.render("Visualizar_cortes", {results : results});
+            }
+        });          
+    }else{
+        res.render("login", {
+            login: true
+        });
+    } 
+    
     
 });
 
 router.get("/Visualizar_estilos", (req, res) => {
-
-    conexion.query("SELECT * FROM estilos ", (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.render("Visualizar_estilos", {results : results});
-        }
-    });
+    if(req.session.loggedin){
+        conexion.query("SELECT * FROM estilos ", (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.render("Visualizar_estilos", {results : results});
+            }
+        });          
+    }else{
+        res.render("login", {
+            login: true
+        });
+    } 
     
+    
+});
+
+// Pagina de visualizacion de usuarios
+router.get("/Visualizar_usuarios", (req, res) => {
+    if(req.session.loggedin){
+        conexion.query("SELECT * FROM usuarios ", (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.render("Visualizar_usuarios", {results : results});
+            }
+        });          
+    }else{
+        res.render("login", {
+            login: true
+        });
+    } 
+        
 });
 
 // Ruta para editar los hilos
 router.get("/Edicion_Hilos/:Codigo", (req, res) =>{
-    const Codigo = req.params.Codigo;
-    conexion.query("SELECT * FROM hilos WHERE Codigo = ?", [Codigo], (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.render("Edicion_Hilos", {hilo: results[0]});
-        }
-    });
+    if(req.session.loggedin){
+        const Codigo = req.params.Codigo;
+        conexion.query("SELECT * FROM hilos WHERE Codigo = ?", [Codigo], (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.render("Edicion_Hilos", {hilo: results[0]});
+            }
+        });
+        router.post('/edicion_hilos', crud.edicion_hilos);
+         
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+    
 });
-router.post('/edicion_hilos', crud.edicion_hilos);
 
 // Ruta para editar los cortes
 router.get("/Edicion_cortes/:Folio_interno", (req, res) =>{
-    const Folio_interno = req.params.Folio_interno;
-    conexion.query("SELECT * FROM cortes WHERE Folio_interno = ?", [Folio_interno], (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.render("Edicion_cortes", {corte: results[0]});
-        }
-    });
+    if(req.session.loggedin){
+        const Folio_interno = req.params.Folio_interno;
+        conexion.query("SELECT * FROM cortes WHERE Folio_interno = ?", [Folio_interno], (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.render("Edicion_cortes", {corte: results[0]});
+            }
+        });   
+        router.post('/edicion_cortes', crud.edicion_cortes);
+       
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+    
 });
-router.post('/edicion_cortes', crud.edicion_cortes);
 
 // Ruta para editar los estilos
 router.get("/Edicion_estilos/:Modelo", (req, res) =>{
-    const Modelo = req.params.Modelo;
-    conexion.query("SELECT * FROM estilos WHERE Modelo = ?", [Modelo], (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.render("Edicion_estilos", {estilo: results[0]});
-        }
-    });
+    if(req.session.loggedin){
+        const Modelo = req.params.Modelo;
+        conexion.query("SELECT * FROM estilos WHERE Modelo = ?", [Modelo], (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.render("Edicion_estilos", {estilo: results[0]});
+            }
+        });
+        router.post('/edicion_estilos', crud.edicion_estilos);         
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+    
 });
-router.post('/edicion_estilos', crud.edicion_estilos);
+
 
 
 // Ruta para eliminar los Hilos
 router.get("/Eliminar_hilos/:Codigo", (req, res) =>{
-    const Codigo = req.params.Codigo;
-    conexion.query("DELETE FROM hilos WHERE Codigo = ?", [Codigo], (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.redirect("../Visualizar_Hilos");
-        }
-    });
+    if(req.session.loggedin){
+        const Codigo = req.params.Codigo;
+        conexion.query("DELETE FROM hilos WHERE Codigo = ?", [Codigo], (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.redirect("../Visualizar_Hilos");
+            }
+        });         
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+    
 });
 
 // Ruta para eliminar ccortes
 router.get("/Eliminar_cortes/:Folio_interno", (req, res) =>{
-    const Folio_interno = req.params.Folio_interno;
-    conexion.query("DELETE FROM cortes WHERE Folio_Interno = ?", [Folio_interno], (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.redirect("../Visualizar_cortes");
-        }
-    });
+    if(req.session.loggedin){
+        const Folio_interno = req.params.Folio_interno;
+        conexion.query("DELETE FROM cortes WHERE Folio_Interno = ?", [Folio_interno], (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.redirect("../Visualizar_cortes");
+            }
+        });         
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+    
 });
 
 
 // Ruta para eliminar ccortes
 router.get("/Eliminar_estilos/:Modelo", (req, res) =>{
-    const Modelo = req.params.Modelo;
-    conexion.query("DELETE FROM estilos WHERE Modelo = ?", [Modelo], (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.redirect("../Visualizar_estilos");
-        }
-    });
+    if(req.session.loggedin){
+        const Modelo = req.params.Modelo;
+        conexion.query("DELETE FROM estilos WHERE Modelo = ?", [Modelo], (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.redirect("../Visualizar_estilos");
+            }
+        });          
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+    
+});
+
+// Ruta para eliminar usuarios
+router.get("/Eliminar_usuarios/:Nombre", (req, res) =>{
+    if(req.session.loggedin){
+        const Nombre = req.params.Nombre;
+        conexion.query("DELETE FROM usuarios WHERE Nombre = ?", [Nombre], (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.redirect("../Visualizar_usuarios");
+            }
+        });         
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+    
 });
 
 // Ruta para ver completo el corte
 router.get("/Corte_completo/:Folio_interno", (req, res) =>{
-    const Folio_interno = req.params.Folio_interno;
-    conexion.query("SELECT * FROM cortes WHERE Folio_interno = ?", [Folio_interno], (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.render("Corte_completo", {corte: results[0]});
-        }
-    });
+    if(req.session.loggedin){
+        const Folio_interno = req.params.Folio_interno;
+        conexion.query("SELECT * FROM cortes WHERE Folio_interno = ?", [Folio_interno], (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.render("Corte_completo", {corte: results[0]});
+            }
+        });          
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+    
 });
 
 // Ruta para ver completo el estilo
 router.get("/Estilo_completo/:Modelo", (req, res) =>{
-    const Modelo = req.params.Modelo;
-    conexion.query("SELECT * FROM estilos WHERE Modelo = ?", [Modelo], (error, results) => {
-        if(error){
-            throw error;
-        }else{
-            res.render("Estilo_completo", {estilo: results[0]});
-        }
-    });
+    if(req.session.loggedin){
+        const Modelo = req.params.Modelo;
+        conexion.query("SELECT * FROM estilos WHERE Modelo = ?", [Modelo], (error, results) => {
+            if(error){
+                throw error;
+            }else{
+                res.render("Estilo_completo", {estilo: results[0]});
+            }
+        });         
+    }else{
+        res.render("login", {
+            login: true
+        });
+    }
+    
 });
 
 
