@@ -8,26 +8,27 @@
     <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/Registro_Hilos_Style.css">
-    <title>Registro HILOS</title>
+    <title>Edicion HILOS</title>
 </head>
 <body>
     <div class="container">
         <div class="title">
-            <div class="menu_left"><a href="Visualizar_Hilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div class="menu_left"><a href="../Visualizar_Hilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
             <div class="menu_center"><a class="ugc">Gestion de Hilos</a></div>
             <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
         </div>
         <div class="section">
-            <a class="page"> REGISTRO DE HILOS</a>
+            <a class="page"> EDICION DE HILOS</a>
         </div>
-        <form action="/registro_hilos" method="post">
+        <form action="/edicion_hilos" method="post">
             <div class="fields">
                 <a class="titlefield">Hilo</a>
-                <div class="datet"><a>Codigo</a></div>
-                <input class="datin" type="text" placeholder="Codigo.." name="codigo" id="codigo">
-                <div class="datet"><a>Nombre</a></div>
-                <input class="datin" type="text" placeholder="Nombre.." name="name" id="name">
-                
+                <% if (hilo) { %>
+                    <div class="datet"><a>Codigo</a></div>
+                    <input class="datin" type="text" placeholder="<%= hilo.Codigo %>" value="<%= hilo.Codigo %>" name="codigo" id="codigo" readonly="readonly">
+                    <div class="datet"><a>Nombre</a></div>
+                    <input class="datin" type="text" placeholder="<%= hilo.Nombre %>" name="name" id="name">
+                <% } %>
             </div>
             <div class="button">
                 <input id="reg-but"  type="submit" value="Guardar">

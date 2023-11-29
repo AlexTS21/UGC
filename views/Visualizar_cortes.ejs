@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/Buscar_Style.css">
-    <title>VISUALIZAR HILOS</title>
+    <title>VISUALIZAR CORTES
+    </title>
 </head>
 <body>
     <div class="container">
@@ -17,25 +18,29 @@
             <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
         </div>
         <div class="section">
-            <a class="page">VISUALIZAR HILOS</a>
+            <a class="page">VISUALIZAR CORTES</a>
         </div>
-        <a href="Registro_Hilos %>" class="btn_menu">Registrar</a>
-        <div class="datet"><a>Codigo</a></div>
+        <a href="Registro_Cortes" class="btn_menu">Registrar</a>
         <table class="table table-borderred table-striped text-center mt-4">
             <thead>
-                <tr><th> Codigo </th>
-                    <th>Nombre</th>
+                <tr>
+                    <th> Folio Interno </th>
+                    <th>Fecha de Pedido</th>
+                    <th> Cliente </th>
+                    <th>Tienda</th>
                 </tr>
             </thead>
             <tbody>
-                <% results.forEach((hilo) => { %>
+                <% results.forEach((corte) => { %>
                     
                 <tr>
-                    <td><%= hilo.Codigo %></td>
-                    <td><%= hilo.Nombre %></td>
+                    <td><%= corte.Folio_interno %></td>
+                    <td><%= corte.Fecha_pedido %></td>
+                    <td><%= corte.Cliente %></td>
+                    <td><%= corte.Tienda %></td>
                     <td>
-                        <a href="/Edicion_Hilos/<%= hilo.Codigo %>" class="btn_menu">Editar</a>
-                        <a href="/Eliminar_hilos/<%= hilo.Codigo %>" class="btn_menu">Eiminar</a>
+                        <a href="/Edicion_cortes/<%= corte.Folio_interno %>" class="btn_menu">Editar</a>
+                        <a href="/Eliminar_cortes/<%= corte.Folio_interno %>" class="btn_menu">Eiminar</a>
                     </td>
                 </tr>
                 <% }) %> 
