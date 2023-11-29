@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../estilos/Buscar_Style.css">
+    <link rel="stylesheet" href="../estilos/Visualizar_Hilos_Style.css">
     <title>VISUALIZAR HILOS</title>
 </head>
 <body>
@@ -19,9 +19,10 @@
         <div class="section">
             <a class="page">VISUALIZAR HILOS</a>
         </div>
-        <a href="Registro_Hilos %>" class="btn_menu">Registrar</a>
-        <div class="datet"><a>Codigo</a></div>
-        <table class="table table-borderred table-striped text-center mt-4">
+        <a href="Registro_Hilos %>" class="btn_registro">Registrar</a>
+        <div class="invisible"><a>Codigo</a></div>
+        <div id="table_cont">
+        <table>
             <thead>
                 <tr><th> Codigo </th>
                     <th>Nombre</th>
@@ -33,14 +34,15 @@
                 <tr>
                     <td><%= hilo.Codigo %></td>
                     <td><%= hilo.Nombre %></td>
-                    <td>
-                        <a href="/Edicion_Hilos/<%= hilo.Codigo %>" class="btn_menu">Editar</a>
-                        <a href="/Eliminar_hilos/<%= hilo.Codigo %>" class="btn_menu">Eiminar</a>
+                    <td class="cont_but">
+                        <a href="/Edicion_Hilos/<%= hilo.Codigo %>" class="btn_tabla">Editar</a>
+                        <a href="/Eliminar_hilos/<%= hilo.Codigo %>" class="btn_tabla">Eiminar</a>
                     </td>
                 </tr>
                 <% }) %> 
             </tbody>
-        </table>            
+        </table>   
+    </div>         
     </div>
 </body>
 </html>
