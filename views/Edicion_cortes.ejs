@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/Registro_Hilos_Style.css">
+    <title>Edicion CORTES</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <div class="menu_left"><a href="../Visualizar_cortes"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div class="menu_center"><a class="ugc">Gestion de Cortes</a></div>
+            <div class="menu_right"><a href="Usuario"><input class="btn_menu" type="submit" value="Usuario"></a></div>
+        </div>
+        <div class="section">
+            <a class="page"> EDICION DE CORTES</a>
+        </div>
+        <form action="/edicion_cortes" method="post">
+        
+            <div class="fields">
+                <% if (corte) { %>
+                <div class="corte">
+                    <a class="titlefield">Corte</a>
+                    <input class="datin" type="text" placeholder="Folio Interno.." value="<%= corte.Folio_interno %>" name="FolioInterno" id="FolioInterno">
+                    <input class="datin" type="text" placeholder="Fecha de pedido.." value="<%= corte.Fecha_pedido%>" name="FechaPedido" id="FechaPedido">
+                    <input class="datin" type="text" placeholder="Cliente.." value="<%= corte.Cliente%>" name="Cliente" id="Cliente">
+                    <input class="datin" type="text" placeholder="Tienda.." value="<%= corte.Tienda%>" name="Tienda" id="Tienda">
+                    <input class="datin" type="text" placeholder="Orden.." value="<%= corte.Orden%>" name="Orden" id="Orden">
+                    <input class="datin" type="text" placeholder="Modelo.." value="<%= corte.Modelo%>" name="Modelo" id="Modelo">
+                    <input class="datin" type="text" placeholder="Descripcion.." value="<%= corte.Descripcion%>" name="descrip" id="descrip">
+                </div>
+                <div class="one_field">                    
+                    <a class="titlefield">Proporcion del corte</a>
+                    <input class="inhi" type="text" placeholder="Proporcion del corte.." value="<%= corte.Proporcion_corte%>" name="proporcion" id="proporcion">
+                </div>                
+                <div class="one_field">
+                    <a class="titlefield">Distribucion de Bultos</a>
+                    <div class="two_input">
+                        <input class="inhi" type="text" placeholder="Tono.." value="<%= corte.TonoDB%>" name="DBTono" id="DBTono">
+                        <input class="inhi" type="text" placeholder="Dobles.." value="<%= corte.DoblesDB%>" name="DBDobles" id="DBDobles">
+                    </div>
+                </div>
+                <div class="one_field">
+                    <a class="titlefield">Retazo</a>
+                    <div class="two_input">
+                        <input class="inhi" type="text" placeholder="Tono.." value="<%= corte.TonoRetazo%>" name="RetazoTono" id="RetazoTono">
+                        <input class="inhi" type="text" placeholder="Dobles.." value="<%= corte.DoblesRetazo%>" name="RetazoDobles" id="RetazoDobles">
+                    </div>
+                </div>
+                <div class="one_field">
+                    <a class="titlefield">Cierre</a>
+                        <select class="tallaform" name="cierre" id="cierre">
+                            <option <%= corte.Cierre == '6' ? "selected" : '' %> " value="6">6 cm</option>
+                            <option <%= corte.Cierre == '8' ? "selected" : '' %> value="8">8 cm</option>
+                            <option <%= corte.Cierre == '10' ? "selected" : '' %> value="10">10 cm</option>
+                            <option <%= corte.Cierre == '12' ? "selected" : '' %> value="12">12 cm</option>
+                            <option <%= corte.Cierre == '15' ? "selected" : '' %> value="15">15 cm</option>
+                            <option <%= corte.Cierre == '18' ? "selected" : '' %> value="18">18 cm</option>
+                        </select>
+                </div>
+                <div class="hilos">
+                    <a class="titlefield">Hilos</a>
+                    <div class="datet"><a>Guia</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." value="<%= corte.Guia_hilo%>" name="guiaH" id="guiaH">
+                        <input class="inhi" type="text" placeholder="Calibre.." value="<%= corte.Guia_calibre%>" name="guiaC" id="modeloC">
+                    </div>
+                    <div class="datet"><a>Presilla</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." value="<%= corte.Presilla_hilo%>"  name="presH" id="presH">
+                        <input class="inhi" type="text" placeholder="Calibre.." value="<%= corte.Presilla_calibre%>" name="presC" id="presC">
+                    </div>
+                    
+                    <div class="datet"><a>Combinacion</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." value="<%= corte.Combinacion_hilo%>" name="combH" id="combH">
+                        <input class="inhi" type="text" placeholder="Calibre.." value="<%= corte.Combinacion_calibre%>" name="combC" id="combC">
+                    </div>
+                    
+                    <div class="datet"><a>Sobrehilado</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." value="<%= corte.Sobre_hilo%>" name="sobreH" id="sobreH">
+                        <input class="inhi" type="text" placeholder="Calibre.." value="<%= corte.Sobre_calibre%>" name="sobreC" id="sobreC">
+                    </div>
+                    
+                    <div class="datet"><a>Seguridad</a></div>
+                    <div class="hilo-inpt">
+                        <input class="inhi" type="text" placeholder="Hilo.." value="<%= corte.Seguridad_hilo%>" name="seguridadH" id="seguridadH">
+                        <input class="inhi" type="text" placeholder="Calibre.." value="<%= corte.Seguridad_calibre%>" name="seguridadC" id="seguridadC">
+                    </div>
+                </div>  
+                <div class="confeccion">
+                    <a class="titlefield">Control de confeccion</a>
+
+                    <div class="datet"><a>Delantero</a></div>
+                    <div class="first-row">
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." value="<%= corte.DelanteroFE%>" name="FechaED" id="FechaED">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." value="<%= corte.DelanteroSEA%>" name="SeEntD" id="SeEntD">
+                    </div>
+                    <div class="second-row">
+                        <input class="inhi" type="text" placeholder="Entrego.." value="<%= corte.DelanteroE%>" name="EntregoD" id="EntregoD">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." value="<%= corte.DelanteroH%>" name="HabiD" id="HabiD">
+                    </div>
+                    <input class="inhi" type="text" placeholder="Fecha Cobro.." value="<%= corte.DelanteroFC%>" name="CobroD" id="CobroD">
+
+                    <div class="datet"><a>Trasero</a></div>
+                    <div class="first-row">
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." value="<%= corte.TraseroFE%>" name="FechaET" id="FechaET">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." value="<%= corte.TraseroSEA%>" name="SeEntT" id="SeEntT">
+                    </div>
+                    <div class="second-row">
+                        <input class="inhi" type="text" placeholder="Entrego.." value="<%= corte.TraseroE%>" name="EntregoT" id="EntregoT">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." value="<%= corte.TraseroH%>" name="HabiT" id="HabiT">
+                    </div>
+                    <input class="inhi" type="text" placeholder="Fecha Cobro.." value="<%= corte.TraseroFC%>" name="CobroT" id="CobroT">
+
+                    <div class="datet"><a>OP. Externos</a></div>
+                    <div class="first-row">
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." value="<%= corte.OPFE%>" name="FechaEOP" id="FechaEOP">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." value="<%= corte.OPSEA%>" name="SeEntOP" id="SeEntOP">
+                    </div>
+                    <div class="second-row">
+                        <input class="inhi" type="text" placeholder="Entrego.." value="<%= corte.OPE%>" name="EntregoOP" id="EntregoOP">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." value="<%= corte.OPH%>" name="HabiOP" id="HabiOP">
+                    </div>
+                    <input class="inhi" type="text" placeholder="Fecha Cobro.." value="<%= corte.OPFC%>" name="CobroOP" id="CobroOP">
+                    
+                    <div class="datet"><a>Terminacion</a></div>
+                    <div class="first-row">
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." value="<%= corte.TerminacionFE%>" name="FechaETE" id="FechaETE">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." value="<%= corte.TerminacionSEA%>" name="SeEntTE" id="SeEntTE">
+                    </div>
+                    <div class="second-row">
+                        <input class="inhi" type="text" placeholder="Entrego.." value="<%= corte.TerminacionE%>" name="EntregoTE" id="EntregoTE">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." value="<%= corte.TerminacionH%>" name="HabiTE" id="HabiTE">
+                    </div>
+                    <input class="inhi" type="text" placeholder="Fecha Cobro.." value="<%= corte.TerminacionFC%>" name="CobroTE" id="CobroTE">
+                    
+                    <div class="datet"><a>Lavanderia</a></div>
+                    <div class="first-row">
+                        <input class="inhi" type="text" placeholder="Fecha Entrega.." value="<%= corte.LavanderiaFE%>" name="FechaEL" id="FechaEL">
+                        <input class="inhi" type="text" placeholder="Se entrego a.." value="<%= corte.LavanderiaSEA%>" name="SeEntL" id="SeEntL">
+                    </div>
+                    <div class="second-row">
+                        <input class="inhi" type="text" placeholder="Entrego.." value="<%= corte.LavanderiaE%>" name="EntregoL" id="EntregoL">
+                        <input class="inhi" type="text" placeholder="Habilitacion.." value="<%= corte.LavanderiaH%>" name="HabiL" id="HabiL">
+                    </div>
+                    <input class="inhi" type="text" placeholder="Fecha Cobro.." value="<%= corte.LavanderiaFC%>" name="CobroL" id="CobroL">
+                </div>
+                <div class="button">
+                    <input id="reg-but" type="submit" value="Guardar">
+                </div>
+                <% } %>
+            </div>
+       
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>
