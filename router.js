@@ -57,6 +57,7 @@ router.post('/login', async (req, res) =>{
                 console.log("incorrecto");
                 res.redirect('Login');
             }else{
+                req.session.loggedin = true;
                 console.log('correcto');
                 res.redirect('/');
             }
