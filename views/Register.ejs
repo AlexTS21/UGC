@@ -19,15 +19,12 @@
         <div class="section">
             <a class="page"> Registrarse</a>
         </div>
-        <form action="/signup" method="POST">
+        <form action="/register" method="POST">
             <div class="form-group">
-                <input type="text" name="fullname" placeholder="Full Name" class="form-control" autofocus> 
+                <input type="text" name="name" id="name" placeholder="Full Name" class="form-control" autofocus> 
             </div>
             <div class="form-group">
-                <input type="text" name="username" placeholder="Username" class="form-control">
-            </div>
-            <div class="form-group">
-                <input type="password" name="password" placeholder="Password" class="form-control">
+                <input type="password" id="password" name="password" placeholder="Password" class="form-control">
             </div>
             <div class="form-group">
                 <button class="btn btn-success btn-block">
@@ -36,6 +33,20 @@
             </div>
         </form>
     </div>
+    <!--<% if(typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>' ,
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton:'<%=showConfimButton%>' ,
+                timer: '<%=timer%>'
+            }).then(()=>{
+                window.location = '/Login <%= ruta%>'
+            });
+        </script>
+    <%}%>  -->
+       
 </body>
 </html>
 

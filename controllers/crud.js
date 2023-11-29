@@ -17,7 +17,7 @@ exports.registro_hilos = (req, res) => {
                     if(error){
                         throw error;
                     }else{
-
+                        alert("Datos almacenados correctamente");
                         console.log("Datos almacenados correctamente");
                     }
                 });
