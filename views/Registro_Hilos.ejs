@@ -9,9 +9,9 @@
 <body>
     <div class="container">
         <div class="title">
-            <div class="menu_left"><a href="Visualizar_Hilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
-            <div class="menu_center"><a class="ugc">Hilos</a></div>
-            <div class="menu_right"><a href="/logout"><input class="btn_menu" type="submit" value="LogOut"></a></div>
+            <div required class="menu_left"><a href="Visualizar_Hilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div required class="menu_center"><a class="ugc">Hilos</a></div>
+            <div required class="menu_right"><a href="/logout"><input class="btn_menu" type="submit" value="LogOut"></a></div>
         </div>
         <div class="section">
             <a class="page"> REGISTRO DE HILOS</a>
@@ -20,13 +20,13 @@
             <div class="fields">
                 <a class="titlefield">Hilo</a>
                 <div class="datet"><a>Codigo</a></div>
-                <input class="datin" type="text" placeholder="Codigo.." name="codigo" id="codigo">
+                <input required class="datin" type="text" placeholder="Codigo.." name="codigo" id="codigo">
                 <div class="datet"><a>Nombre</a></div>
                 <input class="datin" type="text" placeholder="Nombre.." name="name" id="name">
                 
             </div>
             <div class="button">
-                <input id="reg-but"  type="submit" value="Guardar">
+                <input required id="reg-but"  type="submit" value="Guardar">
             </div> 
         </form>
         <div>
