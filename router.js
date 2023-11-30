@@ -32,17 +32,16 @@ router.post('/register', async (req, res) =>{
     conexion.query('INSERT INTO usuarios SET ?', [{Nombre:Nombre, Contrasena:Contrasena}], (error, results) =>{
         if(error){
             throw error;
-        }else{/*
-            res.redirect('register', {
+        }else{
+            res.render('Register', {
                 alert: true,
-                alertTitle: "Registrado",
+                alertTitle: "Registro",
                 alertMessage: "Correctemente registrado",
                 alertIcon: 'success',
                 showConfirmButton: false,
                 timer: 1500,
                 ruta: ''
-            });*/
-            res.redirect('Login');
+            });
             console.log('usuario registrado');
         }
     })
@@ -57,11 +56,27 @@ router.post('/login', async (req, res) =>{
         conexion.query('SELECT * FROM usuarios WHERE Nombre = ?', [name], async (error, results) => {
             if(results.length == 0 || !(await bcryptsjs.compare(password, results[0].Contrasena))){
                 console.log("incorrecto");
-                res.redirect('Login');
+                res.render('Login', {
+                    alert: true,
+                    alertTitle: "Error",
+                    alertMessage: "Datos Erroneos",
+                    alertIcon: 'error',
+                    showConfirmButton: true,
+                    timer: 3000,
+                    ruta: ''
+                });
             }else{
                 req.session.loggedin = true;
                 console.log('correcto');
-                res.redirect('/');
+                res.render('Login', {
+                    alert: true,
+                    alertTitle: "Inicio",
+                    alertMessage: "Correctemente inicializado",
+                    alertIcon: 'success',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    ruta: ''
+                });
             }
         });
     }
@@ -70,7 +85,15 @@ router.post('/login', async (req, res) =>{
 
 router.get('/logout', (req, res) =>{
     req.session.destroy(() => {
-        res.redirect('/Login');
+        res.render('Login', {
+            alert: true,
+            alertTitle: "Bye",
+            alertMessage: "Hasta Pronto",
+            alertIcon: 'info',
+            showConfirmButton: true,
+            timer: 3000,
+            ruta: ''
+        });
     })
 } )
 /////////////////////////// PAGINAS - RENDERIZADO /////////////////////////////
@@ -95,6 +118,7 @@ router.get("/Registro_Hilos", function(req, res){
         res.render("Registro_Hilos", {
             login: true
         });
+        
     }else{
         res.render("login", {
             login: true

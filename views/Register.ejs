@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com 'unsafe-inline'">    
     <link rel="stylesheet" href="../estilos/Registro_Hilos_Style.css">
     <title>Registro</title>
 </head>
@@ -36,19 +36,23 @@
             </div>
         </form>
     </div>
-    <!--<% if(typeof alert != "undefined") { %>
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(typeof alert != "undefined") { %>
         <script>
             Swal.fire({
                 title: '<%= alertTitle %>' ,
                 text: '<%= alertMessage %>',
                 icon: '<%= alertIcon %>',
-                showConfirmButton:'<%=showConfimButton%>' ,
+                showConfirmButton:'<%=showConfirmButton%>' ,
                 timer: '<%=timer%>'
             }).then(()=>{
-                window.location = '/Login <%= ruta%>'
+                window.location = 'Login <%= ruta%>'
             });
         </script>
-    <%}%>  -->
+    <%}%> 
+    </div>
+    
        
 </body>
 </html>
