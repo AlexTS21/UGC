@@ -4,6 +4,7 @@ html{
     margin: 0;
     padding: 0;
     color: aliceblue;
+    background-color: #121314;
 }
 
 body{
@@ -11,6 +12,7 @@ body{
     width: inherit;
     margin: 0;
     padding: 0;
+    background-color: #121314;
 }
 
 .container{
@@ -91,20 +93,16 @@ body{
     letter-spacing: 1.5px;
 }
 
-#table_cont{
-    height: 60%;
+
+
+table{
+    
     width: 120vh;
     margin: 30px;
     background-color: #1D1F21;
     border: solid 3px aliceblue;
     border-radius: 5px;
-}
-
-table{
-    
-    width: inherit;
-    height: inherit;
-    margin: auto;
+    margin: 30PX;
     padding: 10px;
     table-layout: fixed;
     font-family: 'League Spartan', sans-serif;
