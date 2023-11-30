@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/Registro_Estilos_Style.css">
     <title>REGISTRO ESTILOS</title>
@@ -83,18 +82,22 @@
             </div>
         </form>
     </div>
-    <% if(typeof alert != "undefined") { %>
-        <script>
-            Swal.fire({
-                title: '<%= alertTitle %>' ,
-                text: '<%= alertMessage %>',
-                icon: '<%= alertIcon %>',
-                showConfirmButton:'<%=showConfirmButton%>' ,
-                timer: '<%=timer%>'
-            }).then(()=>{
-                window.location = 'Registro_Estilo <%= ruta%>'
-            });
-        </script>
-    <%}%> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <div>
+        <% if(typeof alert != "undefined") { %>
+            <script>
+                Swal.fire({
+                    title: '<%= alertTitle %>' ,
+                    text: '<%= alertMessage %>',
+                    icon: '<%= alertIcon %>',
+                    showConfirmButton:'<%=showConfirmButton%>' ,
+                    timer: '<%=timer%>'
+                }).then(()=>{
+                    window.location = 'Registro_Estilo <%= ruta%>'
+                });
+            </script>
+        <%}%>
+    </div>
+     
 </body>
 </html>
