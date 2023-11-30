@@ -25,13 +25,13 @@
                 <a class="titlefield">Hilo</a>
                 <% if (hilo) { %>
                     <div class="datet"><a>Codigo</a></div>
-                    <input class="datin" type="text" placeholder="<%= hilo.Codigo %>" value="<%= hilo.Codigo %>" name="codigo" id="codigo" readonly="readonly">
+                    <input required class="datin" type="text" placeholder="<%= hilo.Codigo %>" value="<%= hilo.Codigo %>" name="codigo" id="codigo" readonly="readonly">
                     <div class="datet"><a>Nombre</a></div>
                     <input class="datin" type="text" placeholder="<%= hilo.Nombre %>" name="name" id="name">
                 <% } %>
             </div>
             <div class="button">
-                <input id="reg-but"  type="submit" value="Guardar">
+                <input required id="reg-but"  type="submit" value="Guardar">
             </div> 
         </form>
     </div>
