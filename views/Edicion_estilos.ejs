@@ -29,44 +29,44 @@
                         <div class="datet"><a>Modelo</a></div>
                         <input class="datin" type="text" placeholder="Modelo.." value="<%= estilo.Modelo %>" name="modelo" id="modelo">
                         <div class="datet"><a>Descripcion</a></div>
-                        <input class="datin" type="text" placeholder="Descripcion.." value="<%= estilo.Descripcion %>" name="descrip" id="descrip">
+                        <input required class="datin" type="text" placeholder="Descripcion.." value="<%= estilo.Descripcion %>" name="descrip" id="descrip">
                         <div class="datet"><a>Tela</a></div>
                         <input class="datin" type="text" placeholder="Tela.." value="<%= estilo.Tela %>" name="tela" id="tela">
                     </div>
                     <div class="tallas">
                         <a class="titlefield">Tallas</a>
                         <div class="datet"><a>Tallas</a></div>
-                        <input class="datin" type="text" placeholder="Talla.." value="<%= estilo.Tallas %>" name="tallas" id="tallas">
+                        <input required class="datin" type="text" placeholder="Talla.." value="<%= estilo.Tallas %>" name="tallas" id="tallas">
                     </div>
                     <div class="hilos">
                         <a class="titlefield">Hilos</a>
                         <div class="datet"><a>Guia</a></div>
                         <div class="hilo-inpt">
-                            <input class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Guia_hilo %>" name="guiaH" id="guiaH">
-                            <input class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Guia_calibre %>" name="guiaC" id="modeloC">
+                            <input required class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Guia_hilo %>" name="guiaH" id="guiaH">
+                            <input required class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Guia_calibre %>" name="guiaC" id="modeloC">
                         </div>
                         <div class="datet"><a>Presilla</a></div>
                         <div class="hilo-inpt">
-                            <input class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Presilla_hilo %>" name="presH" id="presH">
-                            <input class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Presilla_calibre %>" name="presC" id="presC">
+                            <input required class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Presilla_hilo %>" name="presH" id="presH">
+                            <input required class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Presilla_calibre %>" name="presC" id="presC">
                         </div>
                         
                         <div class="datet"><a>Combinacion</a></div>
                         <div class="hilo-inpt">
-                            <input class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Combinacion_hilo %>" name="combH" id="combH">
-                            <input class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Calibre %>" name="combC" id="combC">
+                            <input required class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Combinacion_hilo %>" name="combH" id="combH">
+                            <input required class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Calibre %>" name="combC" id="combC">
                         </div>
                         
                         <div class="datet"><a>Sobrehilado</a></div>
                         <div class="hilo-inpt">
-                            <input class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Sobrehilado_hilo %>" name="sobreH" id="sobreH">
-                            <input class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Sobrehilado_calibre %>" name="sobreC" id="sobreC">
+                            <input required class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Sobrehilado_hilo %>" name="sobreH" id="sobreH">
+                            <input required class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Sobrehilado_calibre %>" name="sobreC" id="sobreC">
                         </div>
                         
                         <div class="datet"><a>Seguridad</a></div>
                         <div class="hilo-inpt">
-                            <input class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Seguridad_hilo %>" name="seguridadH" id="seguridadH">
-                            <input class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Seguridad_calibre %>" name="seguridadC" id="seguridadC">
+                            <input required class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Seguridad_hilo %>" name="seguridadH" id="seguridadH">
+                            <input required class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Seguridad_calibre %>" name="seguridadC" id="seguridadC">
                         </div>
                     </div>  
                     <div class="cierre">
@@ -85,7 +85,7 @@
        
             </div>
             <div class="button">
-                <input id="reg-but"  type="submit" value="Guardar">
+                <input required id="reg-but"  type="submit" value="Guardar">
             </div> 
         </form>
     </div>

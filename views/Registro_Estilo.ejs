@@ -12,9 +12,9 @@
 <body>
     <div class="container">
         <div class="title">
-            <div class="menu_left"><a href="Visualizar_estilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
-            <div class="menu_center"><a class="ugc">Estilos</a></div>
-            <div class="menu_right"><a href="/logout"><input class="btn_menu" type="submit" value="LogOut"></a></div>
+            <div required class="menu_left"><a href="Visualizar_estilos"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
+            <div required class="menu_center"><a class="ugc">Estilos</a></div>
+            <div required class="menu_right"><a href="/logout"><input class="btn_menu" type="submit" value="LogOut"></a></div>
         </div>
         <div class="section">
             <a class="page">REGISTRO DE ESTILOS</a>
@@ -25,45 +25,45 @@
                     <a class="titlefield">Datos del estilo</a>
                     <div class="datet"><a>Modelo</a></div>
                     <input class="datin" type="text" placeholder="Modelo.." name="modelo" id="modelo">
-                    <div class="datet"><a>Descripcion</a></div>
+                    <div required class="datet"><a>Descripcion</a></div>
                     <input class="datin" type="text" placeholder="Descripcion.." name="descrip" id="descrip">
                     <div class="datet"><a>Tela</a></div>
                     <input class="datin" type="text" placeholder="Tela.." name="tela" id="tela">
                 </div>
                 <div class="tallas">
                     <a class="titlefield">Tallas</a>
-                    <div class="datet"><a>Tallas</a></div>
+                    <div required class="datet"><a>Tallas</a></div>
                     <input class="datin" type="text" placeholder="Talla.." name="tallas" id="tallas">
                 </div>
                 <div class="hilos">
                     <a class="titlefield">Hilos</a>
                     <div class="datet"><a>Guia</a></div>
                     <div class="hilo-inpt">
-                        <input class="inhi" type="text" placeholder="Hilo.." name="guiaH" id="guiaH">
-                        <input class="inhi" type="text" placeholder="Calibre.." name="guiaC" id="modeloC">
+                        <input required class="inhi" type="text" placeholder="Hilo.." name="guiaH" id="guiaH">
+                        <input required class="inhi" type="text" placeholder="Calibre.." name="guiaC" id="modeloC">
                     </div>
                     <div class="datet"><a>Presilla</a></div>
                     <div class="hilo-inpt">
-                        <input class="inhi" type="text" placeholder="Hilo.." name="presH" id="presH">
-                        <input class="inhi" type="text" placeholder="Calibre.." name="presC" id="presC">
+                        <input required class="inhi" type="text" placeholder="Hilo.." name="presH" id="presH">
+                        <input required class="inhi" type="text" placeholder="Calibre.." name="presC" id="presC">
                     </div>
                     
                     <div class="datet"><a>Combinacion</a></div>
                     <div class="hilo-inpt">
-                        <input class="inhi" type="text" placeholder="Hilo.." name="combH" id="combH">
-                        <input class="inhi" type="text" placeholder="Calibre.." name="combC" id="combC">
+                        <input required class="inhi" type="text" placeholder="Hilo.." name="combH" id="combH">
+                        <input required class="inhi" type="text" placeholder="Calibre.." name="combC" id="combC">
                     </div>
                     
                     <div class="datet"><a>Sobrehilado</a></div>
                     <div class="hilo-inpt">
-                        <input class="inhi" type="text" placeholder="Hilo.." name="sobreH" id="sobreH">
-                        <input class="inhi" type="text" placeholder="Calibre.." name="sobreC" id="sobreC">
+                        <input required class="inhi" type="text" placeholder="Hilo.." name="sobreH" id="sobreH">
+                        <input required class="inhi" type="text" placeholder="Calibre.." name="sobreC" id="sobreC">
                     </div>
                     
                     <div class="datet"><a>Seguridad</a></div>
                     <div class="hilo-inpt">
-                        <input class="inhi" type="text" placeholder="Hilo.." name="seguridadH" id="seguridadH">
-                        <input class="inhi" type="text" placeholder="Calibre.." name="seguridadC" id="seguridadC">
+                        <input required class="inhi" type="text" placeholder="Hilo.." name="seguridadH" id="seguridadH">
+                        <input required class="inhi" type="text" placeholder="Calibre.." name="seguridadC" id="seguridadC">
                     </div>
                 </div>  
                 <div class="cierre">
@@ -78,7 +78,7 @@
                         </select>
                 </div>
                 <div class="button">
-                    <input id="reg-but" type="submit" value="REGISTRAR">
+                    <input required id="reg-but" type="submit" value="REGISTRAR">
                 </div>
             </div>
         </form>
