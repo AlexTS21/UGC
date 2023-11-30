@@ -7,36 +7,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/Visualizar_Hilos_Style.css">
-    <title>VISUALIZAR HILOS</title>
+    <title>VISUALIZAR USUARIOS</title>
 </head>
 <body>
     <div class="container">
         <div class="title">
             <div class="menu_left"><a href="/"><input class="btn_menu" type="submit" value="REGRESAR"></a></div>
-            <div class="menu_center"><a class="ugc">Hilos</a></div>
+            <div class="menu_center"><a class="ugc">Usuarios</a></div>
             <div class="menu_right"><a href="/logout"><input class="btn_menu" type="submit" value="LogOut"></a></div>
         </div>
         <div class="section">
-            <a class="page">VISUALIZAR HILOS</a>
+            <a class="page">VISUALIZAR USUARIOS</a>
         </div>
-        <a href="Registro_Hilos %>" class="btn_registro">Registrar</a>
-        <div class="invisible"><a>Codigo</a></div>
+        <a href="Register" class="btn_registro">Registrar</a>
+        
         <div id="table_cont">
         <table>
             <thead>
-                <tr><th> Codigo </th>
-                    <th>Nombre</th>
+                <tr><th> Nombre </th>
                 </tr>
             </thead>
             <tbody>
-                <% results.forEach((hilo) => { %>
+                <% results.forEach((user) => { %>
                     
                 <tr>
-                    <td><%= hilo.Codigo %></td>
-                    <td><%= hilo.Nombre %></td>
-                    <td class="cont_but">
-                        <a href="/Edicion_Hilos/<%= hilo.Codigo %>" class="btn_tabla">Editar</a>
-                        <a href="/Eliminar_hilos/<%= hilo.Codigo %>" class="btn_tabla">Eiminar</a>
+                    <td><%= user.Nombre %></td>
+                    <td class="cont_but">                        
+                        <a href="/Eliminar_usuarios/<%= user.Nombre %>" class="btn_tabla">Eiminar</a>
                     </td>
                 </tr>
                 <% }) %> 
