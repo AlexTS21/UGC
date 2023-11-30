@@ -44,5 +44,18 @@
         </table>   
     </div>         
     </div>
+    <% if(typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>' ,
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton:'<%=showConfirmButton%>' ,
+                timer: '<%=timer%>'
+            }).then(()=>{
+                window.location = '/Visualizar_HIlos <%= ruta%>: '
+            });
+        </script>
+    <%}%>
 </body>
 </html>

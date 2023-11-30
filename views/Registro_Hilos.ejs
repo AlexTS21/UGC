@@ -2,11 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="../estilos/Registro_Hilos_Style.css">
     <title>Registro HILOS</title>
 </head>
@@ -33,6 +29,26 @@
                 <input id="reg-but"  type="submit" value="Guardar">
             </div> 
         </form>
+        <div>
+            
+        </div>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>' ,
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton:'<%=showConfirmButton%>' ,
+                timer: '<%=timer%>'
+            }).then(()=>{
+                window.location = 'Registro_Hilos <%= ruta%>'
+            });
+        </script>
+    <%}%> 
+    
+    
 </body>
 </html>

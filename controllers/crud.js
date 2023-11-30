@@ -10,20 +10,36 @@ exports.registro_hilos = (req, res) => {
             throw error;
         }else{
             if(row.length > 0){
-                console.log("EL hilo ya existe");
+                res.render('Registro_Hilos', {
+                    alert: true,
+                    alertTitle: "Error",
+                    alertMessage: "El hilo ya existe",
+                    alertIcon: 'warning',
+                    showConfirmButton: true,
+                    timer: 3000,
+                    ruta: ''
+                });
             }else{
                 let registrar = "INSERT INTO hilos (Codigo, Nombre) VALUES ('"+codigo+"', '"+name+"') ";
                 conexion.query(registrar, function(error){
                     if(error){
                         throw error;
-                    }else{                        
-                        console.log("Datos almacenados correctamente");
+                    }else{  
+                        res.render('Registro_Hilos', {
+                            alert: true,
+                            alertTitle: "Exito",
+                            alertMessage: "El hilo se registro correctamente",
+                            alertIcon: 'success',
+                            showConfirmButton: true,
+                            timer: 3000,
+                            ruta: ''
+                        });                    
                     }
                 });
             }
         }
     });  
-    res.redirect("/Visualizar_Hilos");  
+    //res.redirect("/Visualizar_Hilos");  
 }
 
 
