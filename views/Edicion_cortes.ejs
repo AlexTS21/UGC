@@ -26,7 +26,7 @@
                 <% if (corte) { %>
                 <div class="corte">
                     <a class="titlefield">Corte</a>
-                    <input required class="datin" type="text" placeholder="Folio Interno.." value="<%= corte.Folio_interno %>" name="FolioInterno" id="FolioInterno">
+                    <input required class="datin" type="text" placeholder="Folio Interno.." value="<%= corte.Folio_interno %>" name="FolioInterno" id="FolioInterno" readonly="readonly">
                     <input required class="datin" type="text" placeholder="Fecha de pedido.." value="<%= corte.Fecha_pedido%>" name="FechaPedido" id="FechaPedido">
                     <input required class="datin" type="text" placeholder="Cliente.." value="<%= corte.Cliente%>" name="Cliente" id="Cliente">
                     <input required class="datin" type="text" placeholder="Tienda.." value="<%= corte.Tienda%>" name="Tienda" id="Tienda">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="one_field">                    
                     <a class="titlefield">Proporcion del corte</a>
-                    <input class="inhi" type="text" placeholder="Proporcion del corte.." value="<%= corte.Proporcion_corte%>" name="proporcion" id="proporcion">
+                    <input required class="inhi" type="text" placeholder="Proporcion del corte.." value="<%= corte.Proporcion_corte%>" name="proporcion" id="proporcion">
                 </div>                
                 <div class="one_field">
                     <a class="titlefield">Distribucion de Bultos</a>
@@ -150,7 +150,7 @@
                         <input required class="inhi" type="text" placeholder="Entrego.." value="<%= corte.LavanderiaE%>" name="EntregoL" id="EntregoL">
                         <input required class="inhi" type="text" placeholder="Habilitacion.." value="<%= corte.LavanderiaH%>" name="HabiL" id="HabiL">
                     </div>
-                    <input class="inhi" type="text" placeholder="Fecha Cobro.." value="<%= corte.LavanderiaFC%>" name="CobroL" id="CobroL">
+                    <input required class="inhi" type="text" placeholder="Fecha Cobro.." value="<%= corte.LavanderiaFC%>" name="CobroL" id="CobroL">
                 </div>
                 <div class="button">
                     <input required id="reg-but" type="submit" value="Guardar">

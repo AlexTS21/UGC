@@ -164,11 +164,12 @@ exports.edicion_estilos = (req, res) => {
     let seguridadH = estilos.seguridadH;
     let seguridadC = estilos.seguridadC;
     let cierre = estilos.cierre;
-
+    console.log(estilos);
     conexion.query("UPDATE estilos SET ? WHERE Modelo = ?", [{Descripcion:descrip, Tela:tela, Tallas:tallas, Guia_hilo:guiaH, Guia_calibre:guiaC, Presilla_hilo:presH, Presilla_calibre:presC, Combinacion_hilo:combH, Combinacion_calibre:combC, Sobrehilado_hilo:sobreH, Sobrehilado_calibre:sobreC, Seguridad_hilo:seguridadH, Seguridad_calibre:seguridadC, Cierre:cierre}, modelo], (error, results)=>{
         if(error){
             throw error;
         }else{
+            console.log(results);
             res.render('index', {
                 alert: true,
                 alertTitle: "Exito",

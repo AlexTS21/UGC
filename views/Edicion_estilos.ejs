@@ -26,11 +26,11 @@
                     <div class="datos">
                         <a class="titlefield">Datos del estilo</a>
                         <div class="datet"><a>Modelo</a></div>
-                        <input class="datin" type="text" placeholder="Modelo.." value="<%= estilo.Modelo %>" name="modelo" id="modelo">
+                        <input required class="datin" type="text" placeholder="Modelo.." value="<%= estilo.Modelo %>" name="modelo" id="modelo" readonly="readonly">
                         <div class="datet"><a>Descripcion</a></div>
                         <input required class="datin" type="text" placeholder="Descripcion.." value="<%= estilo.Descripcion %>" name="descrip" id="descrip">
                         <div class="datet"><a>Tela</a></div>
-                        <input class="datin" type="text" placeholder="Tela.." value="<%= estilo.Tela %>" name="tela" id="tela">
+                        <input required class="datin" type="text" placeholder="Tela.." value="<%= estilo.Tela %>" name="tela" id="tela">
                     </div>
                     <div class="tallas">
                         <a class="titlefield">Tallas</a>
@@ -53,7 +53,7 @@
                         <div class="datet"><a>Combinacion</a></div>
                         <div class="hilo-inpt">
                             <input required class="inhi" type="text" placeholder="Hilo.." value="<%= estilo.Combinacion_hilo %>" name="combH" id="combH">
-                            <input required class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Calibre %>" name="combC" id="combC">
+                            <input required class="inhi" type="text" placeholder="Calibre.." value="<%= estilo.Combinacion_calibre %>" name="combC" id="combC">
                         </div>
                         
                         <div class="datet"><a>Sobrehilado</a></div>
