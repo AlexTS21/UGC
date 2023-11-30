@@ -344,6 +344,7 @@ router.get("/Eliminar_cortes/:Folio_interno", (req, res) =>{
             if(error){
                 throw error;
             }else{
+                alert('Eliminado correctamente =)');
                 res.redirect("../Visualizar_cortes");
             }
         });         

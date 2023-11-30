@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
     <link rel="stylesheet" href="estilos/index_Style.css">
     <title>UGC-Gestion</title>
@@ -24,6 +23,23 @@
             <a href="Visualizar_Hilos"><input type="submit" value="GESTION HILOS"></a>
             <a href="Visualizar_usuarios"><input type="submit" value="GESTION USUARIOS"></a>
         </div>
+        
     </div>
+    <div>
+        <% if(typeof alert != "undefined") { %>
+            <script>
+                Swal.fire({
+                    title: '<%= alertTitle %>' ,
+                    text: '<%= alertMessage %>',
+                    icon: '<%= alertIcon %>',
+                    showConfirmButton:'<%=showConfirmButton%>' ,
+                    timer: '<%=timer%>'
+                }).then(()=>{
+                    window.location = '/ <%= ruta%>'
+                });
+            </script>
+        <%}%>
+    </div>
+    
 </body>
 </html>

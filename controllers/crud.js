@@ -51,10 +51,19 @@ exports.edicion_hilos = (req, res) => {
         if(error){
             throw error;
         }else{
+            res.render('index', {
+                alert: true,
+                alertTitle: "Exito",
+                alertMessage: "El hilo se editado correctamente",
+                alertIcon: 'success',
+                showConfirmButton: true,
+                timer: 3000,
+                ruta: ''
+            }); 
             console.log("Datos corregidos correctamente");
         }
     });
-    res.redirect("/Visualizar_Hilos");
+    //res.redirect("/Visualizar_Hilos");
 }
 
 exports.edicion_cortes = (req, res) => {
@@ -118,11 +127,21 @@ exports.edicion_cortes = (req, res) => {
         if(error){
             throw error;
         }else{
+            res.render('index', {
+                alert: true,
+                alertTitle: "Exito",
+                alertMessage: "El corte se editado correctamente",
+                alertIcon: 'success',
+                showConfirmButton: true,
+                timer: 3000,
+                ruta: ''
+            }); 
             console.log("Datos corregidos correctamente");
+            
         }      
 
     });
-    res.redirect("/Visualizar_cortes");    
+    //res.redirect("/Visualizar_cortes");    
 };
 
     
@@ -150,10 +169,19 @@ exports.edicion_estilos = (req, res) => {
         if(error){
             throw error;
         }else{
+            res.render('index', {
+                alert: true,
+                alertTitle: "Exito",
+                alertMessage: "El estilo se editado correctamente",
+                alertIcon: 'success',
+                showConfirmButton: true,
+                timer: 3000,
+                ruta: ''
+            });
             console.log("Datos corregidos correctamente");
         }
     });    
-    res.redirect("/Visualizar_estilos");
+    //res.redirect("/Visualizar_estilos");
 };
 
 // Funcion para registrar los estilos en la base de datos
@@ -183,6 +211,15 @@ exports.registro_estilos = (req, res) => {
             throw error;
         }else{
             if(row.length > 0){
+                res.render('Registro_Estilo', {
+                    alert: true,
+                    alertTitle: "Error",
+                    alertMessage: "El estilo ya existe",
+                    alertIcon: 'warning',
+                    showConfirmButton: true,
+                    timer: 3000,
+                    ruta: ''
+                });
                 console.log("EL estilo ya existe");
             }else{
                 let registrar = "INSERT INTO estilos (Modelo, Descripcion, Tela, Tallas, Guia_hilo, Guia_calibre, Presilla_hilo, Presilla_calibre, Combinacion_hilo, Combinacion_calibre, Sobrehilado_hilo, Sobrehilado_calibre, Seguridad_hilo, Seguridad_calibre, Cierre) VALUES ('"+modelo+"', '"+descrip+"', '"+tela+"', '"+tallas+"', '"+guiaH+"', '"+guiaC+"', '"+presH+"', '"+presC+"', '"+combH+"', '"+combC+"', '"+sobreH+"', '"+sobreC+"','"+seguridadH+"', '"+seguridadC+"', '"+cierre+"') ";
@@ -190,13 +227,22 @@ exports.registro_estilos = (req, res) => {
                     if(error){
                         throw error;
                     }else{
+                        res.render('Registro_Estilo', {
+                            alert: true,
+                            alertTitle: "Exito",
+                            alertMessage: "El estilo se registro correctamente",
+                            alertIcon: 'succes',
+                            showConfirmButton: true,
+                            timer: 3000,
+                            ruta: ''
+                        });
                         console.log("Datos almacenados correctamente");
                     }
                 });
             }
         }
     });    
-    res.redirect("/Visualizar_estilos");
+    //res.redirect("/Visualizar_estilos");
 };
 
 // Funcion para registrar los cortes en la base de datos
@@ -263,13 +309,31 @@ exports.registro_cortes = (req, res) => {
             throw error;
         }else{
             if(row.length > 0){
+                res.render('Registro_Cortes', {
+                    alert: true,
+                    alertTitle: "Error",
+                    alertMessage: "El corte ya existe",
+                    alertIcon: 'warning',
+                    showConfirmButton: true,
+                    timer: 3000,
+                    ruta: ''
+                });
                 console.log("EL corte ya existe");
             }else{
                 let registrar = "INSERT INTO cortes (Folio_interno, Fecha_pedido, Cliente, Tienda, Orden, Modelo, Descripcion, Proporcion_corte, TonoDB, DoblesDB, TonoRetazo, DoblesRetazo, Cierre, Guia_hilo, Guia_calibre, Presilla_hilo, Presilla_calibre, Combinacion_hilo, Combinacion_calibre, Sobre_hilo, Sobre_calibre, Seguridad_hilo, Seguridad_calibre, DelanteroFE, DelanteroSEA, DelanteroE, DelanteroH, DelanteroFC, TraseroFE, TraseroSEA, TraseroE, TraseroH, TraseroFC, OPFE, OPSEA, OPE, OPH, OPFC, TerminacionFE, TerminacionSEA, TerminacionE, TerminacionH, TerminacionFC, LavanderiaFE, LavanderiaSEA, LavanderiaE, LavanderiaH, LavanderiaFC) VALUES ('"+FolioI+"', '"+FechaP+"', '"+Cliente+"', '"+Tienda+"', '"+Orden+"', '"+Modelo+"', '"+descrip+"', '"+proporcion+"', '"+DBTono+"', '"+DBDobles+"', '"+RetazoTono+"', '"+RetazoDobles+"', '"+cierre+"', '"+guiaH+"', '"+guiaC+"', '"+presH+"', '"+presC+"', '"+combH+"', '"+combC+"', '"+sobreH+"', '"+sobreC+"','"+seguridadH+"', '"+seguridadC+"', '"+FechaED+"', '"+SeEntD+"', '"+EntregoD+"', '"+HabiD+"', '"+CobroD+"', '"+FechaET+"', '"+SeEntT+"', '"+EntregoT+"', '"+HabiT+"', '"+CobroT+"', '"+FechaEOP+"', '"+SeEntOP+"', '"+EntregoOP+"', '"+HabiOP+"', '"+CobroOP+"', '"+FechaETE+"', '"+SeEntTE+"', '"+EntregoTE+"', '"+HabiTE+"', '"+CobroTE+"', '"+FechaEL+"', '"+SeEntL+"', '"+EntregoL+"', '"+HabiL+"', '"+CobroL+"') ";
                 conexion.query(registrar, function(error){
                     if(error){
                         throw error;
-                    }else{
+                    }else{                        
+                        res.render('Registro_Cortes', {
+                            alert: true,
+                            alertTitle: "Exito",
+                            alertMessage: "El corte se registro correctamente",
+                            alertIcon: 'succes',
+                            showConfirmButton: true,
+                            timer: 3000,
+                            ruta: ''
+                        });
                         console.log("Datos almacenados correctamente");
                     }
                 });
@@ -277,5 +341,5 @@ exports.registro_cortes = (req, res) => {
         }
     });    
 
-    res.redirect("/Visualizar_Cortes");
+    //res.redirect("/Visualizar_Cortes");
 };
