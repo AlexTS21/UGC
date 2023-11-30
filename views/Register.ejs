@@ -13,16 +13,17 @@
 <body>
 
     <div class="container">
-        <div class="menu_right"><a href="/"><input class="btn_menu" type="submit" value="Atras"></a></div>
 
         <div class="title">
+            <div class="menu_left"></div>
             <div class="menu_center"><a class="ugc">Registro de usuarios</a></div>
-            
+            <div class="menu_right"><a href="/"><input class="btn_menu" type="submit" value="Atras"></a></div>
+
         </div>
         <div class="section">
             <a class="page"> Registrarse</a>
         </div>
-        <form action="/register" method="POST">
+        <form class="fields" action="/register" method="POST">
             <div class="form-group">
                 <input type="text" name="name" id="name" placeholder="Full Name" class="form-control" autofocus required> 
             </div>
