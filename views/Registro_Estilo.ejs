@@ -83,5 +83,18 @@
             </div>
         </form>
     </div>
+    <% if(typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>' ,
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton:'<%=showConfirmButton%>' ,
+                timer: '<%=timer%>'
+            }).then(()=>{
+                window.location = 'Registro_Estilo <%= ruta%>'
+            });
+        </script>
+    <%}%> 
 </body>
 </html>
