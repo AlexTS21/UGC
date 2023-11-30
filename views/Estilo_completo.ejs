@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../estilos/Buscar_Style.css">
+    <link rel="stylesheet" href="../estilos/Completo.css">
     <title>Estilo completo
     </title>
 </head>
@@ -22,7 +22,8 @@
         </div>
         <div class="section">
             <a class="page">Datos del estilo</a>
-        </div>        
+        </div> 
+        <div class="tablax">      
         <table class="table table-borderred table-striped text-center mt-4">
             <thead>
                 <tr>
@@ -68,10 +69,11 @@
                 </tr>
                 <% } %>
         </table> 
-        <div class="section">
-            <a class="page">Cierre: <%= estilo.Cierre %></a>
-        </div>
+    
         
+            <a id="holi" class="page">Cierre: <%= estilo.Cierre %></a>
+        </div>
+    </div>    
     </div>
 </body>
 </html>
