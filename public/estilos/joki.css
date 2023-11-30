@@ -74,6 +74,25 @@ button{
     transition: 0.8s;
 }
 
+.btn{
+    width: 100px;
+    height: 30px;
+    background-color: #121314;
+    border: solid 3px aliceblue;
+    border-radius: 5px;
+    color: aliceblue;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+    padding-left: 10px;
+    font-weight: 300;
+    transition: 0.8s;
+}
+
+.btn:hover{
+    background-color: aliceblue;
+    color: #121314;
+}
+
 button:hover{
     background-color: aliceblue;
     color: #121314;

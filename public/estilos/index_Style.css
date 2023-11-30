@@ -55,6 +55,44 @@ input{
 }
 
 
+.menu_left{
+    width: 30%;
+    padding-left: 30px;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.menu_center{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu_right{
+    width: 30%;
+    height: inherit;
+    padding-right: 30px;
+    display: flex;
+    align-items:center;
+    justify-content: right;
+}
+
+.btn_menu{
+    height: 40px;
+    width: 80px;
+    border-radius: 12px;
+    border: solid 2px aliceblue;
+    background-color: #1D1F21;
+    color: aliceblue;
+    transition: 0.8s;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    letter-spacing:normal;
+}
+
 
 .but{
     height: 600px;
